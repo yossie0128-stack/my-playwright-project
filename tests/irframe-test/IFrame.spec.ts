@@ -165,16 +165,25 @@ await expect( page.getByRole('searchbox')).toHaveValue('hoge');
 test('tab practice6', async ({ page }) => {
 await page.goto('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe');
 
+await page.waitForLoadState('domcontentloaded');
+
 const iframeLocator = page.frameLocator('#iframeResult')
                           .frameLocator('iframe[title="W3Schools Free Online Web Tutorials"]');
-const url = await iframeLocator.getByRole('link', { name: 'JAVASCRIPT', exact: true }).evaluate((el: HTMLAnchorElement )=> el.href);
+const link = iframeLocator.getByRole('link', { name: 'JAVASCRIPT', exact: true });
+await link.waitFor();
+
+const frame = iframeLocator.owner().page().frames().find(f =>
+      f.url().includes('w3schools.com')
+);
+
+const url = await link.evaluate((el: HTMLAnchorElement ) => el.href);
 
 const [newTab] = await Promise.all([
   page.waitForEvent('popup'),
-  page.evaluate(url => window.open(url), url),
+  frame!.evaluate(url => window.open(url), url),
 ]);
 
-await newTab.waitForLoadState();
+await newTab.waitForLoadState('domcontentloaded');
 expect ( (await newTab.title())).toBe('JavaScript Tutorial');
 
 await newTab.close();
