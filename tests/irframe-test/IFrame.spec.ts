@@ -64,24 +64,23 @@ test('irFrame practice1', async ({ page }) => {
 
 await page.goto('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe');
 
-const iframeLocator = page.frameLocator('#iframeResult')
-                          .frameLocator('iframe[title="W3Schools Free Online Web Tutorials"]');
+  await page.waitForLoadState('domcontentloaded');
 
-await iframeLocator.getByRole('link', { name: 'JAVASCRIPT', exact: true }).click();
+const iframeLocator = page
+  .frameLocator('#iframeResult')
+  .frameLocator('iframe[title="W3Schools Free Online Web Tutorials"]');
+  const iframeElement = await iframeLocator.owner().elementHandle();
+  const frame = await iframeElement?.contentFrame();
 
-  const heading = iframeLocator.getByRole('heading', { name: 'JavaScript Tutorial' });
-  await heading.waitFor({ state: 'visible' });//ブラウザの挙動によって下の処理が安定しないため処理待ちを行っている
 
-const iframeElement = await iframeLocator.owner().elementHandle();
-const frame = await iframeElement?.contentFrame();
+  await frame!.getByRole('link', { name: 'JAVASCRIPT', exact: true }).click();
+
+  await frame!.getByRole('heading', { name: 'JavaScript Tutorial' }).waitFor();
 
   await Promise.all([
-    frame?.waitForNavigation(),
-    frame?.evaluate(() => history.back())
+    frame!.waitForNavigation(),
+    frame!.evaluate(() => history.back())
   ]);
-
-  // 内部 iframe の history.back() を実行
- //await innerFrame.evaluate(() => history.back());
 
 });
 
@@ -167,15 +166,11 @@ await page.goto('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ifram
 
 await page.waitForLoadState('domcontentloaded');
 
-const iframeLocator = page.frameLocator('#iframeResult')
-                          .frameLocator('iframe[title="W3Schools Free Online Web Tutorials"]');
-const link = iframeLocator.getByRole('link', { name: 'JAVASCRIPT', exact: true });
+  const frame = page.frames().find(f =>
+    f.url().includes('w3schools.com')
+  );
+const link = frame!.getByRole('link', { name: 'JAVASCRIPT', exact: true });
 await link.waitFor();
-
-const frame = iframeLocator.owner().page().frames().find(f =>
-      f.url().includes('w3schools.com')
-);
-
 const url = await link.evaluate((el: HTMLAnchorElement ) => el.href);
 
 const [newTab] = await Promise.all([
@@ -189,7 +184,6 @@ expect ( (await newTab.title())).toBe('JavaScript Tutorial');
 await newTab.close();
 await page.waitForLoadState();
 
-await iframeLocator.getByRole('link', { name: 'CSS', exact: true }).click();
-
+ await frame!.locator('a:has-text("CSS")').click();
 
 });
