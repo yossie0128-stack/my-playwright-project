@@ -75,7 +75,10 @@ await iframeLocator.getByRole('link', { name: 'JAVASCRIPT', exact: true }).click
 const iframeElement = await iframeLocator.owner().elementHandle();
 const frame = await iframeElement?.contentFrame();
 
-await frame?.evaluate( () => window.history.back());
+  await Promise.all([
+    frame?.waitForNavigation(),
+    frame?.evaluate(() => history.back())
+  ]);
 
   // 内部 iframe の history.back() を実行
  //await innerFrame.evaluate(() => history.back());
@@ -147,10 +150,13 @@ const [newTab] = await Promise.all([
   page.evaluate(() => window.open('https://www.tiny.cloud/docs/tinymce/latest/')),
 ]);
 
-await newTab.waitForLoadState();
+await newTab.waitForURL(/tiny\.cloud/);
+await newTab.waitForLoadState('domcontentloaded');
+
 await newTab.close();
 
-await page.waitForLoadState();
+
+await newTab.waitForLoadState('domcontentloaded');
 await expect( page.getByRole('searchbox')).toHaveValue('hoge');
 
 

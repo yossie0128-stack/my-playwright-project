@@ -33,6 +33,10 @@ export default defineConfig({
   trace: 'retain-on-failure', // 'on', 'off', 'retain-on-failure'
   screenshot: 'only-on-failure',
   video: 'retain-on-failure',
+  headless: true,
+  viewport: { width: 1280, height: 720 },
+
+
   },
 
   /* Configure projects for major browsers */
