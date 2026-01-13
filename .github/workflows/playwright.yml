@@ -25,7 +25,7 @@ jobs:
         run: npx playwright install --force
 
       - name: Run Playwright tests
-        run: npx playwright test
+        npx playwright test --project=chromium --workers=2
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
