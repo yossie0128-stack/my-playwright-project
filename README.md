@@ -17,7 +17,6 @@ my-playwright-project/
 ├── playwright.config.ts  # 実行戦略（リトライ・並列数・タイムアウト）の設定
 └── .github/workflows/    # CI パイプライン（GitHub Actions）
 
-コードは注意してご使用ください。
 
 ![自動テストが失敗した場合、画像のように分かりやすく何処で失敗したのか知らせてくれます](./images/screen-trace.png)
 
@@ -61,7 +60,6 @@ npx playwright test
 # レポート確認
 npx playwright show-report
 
-コードは注意してご使用ください。
 
 💡 補足：本プロジェクトの技術選定理由
 本プロジェクトは Playwright 公式ドキュメント を題材に、実際の Web サイト構造を分析・攻略する形で設計しています。
