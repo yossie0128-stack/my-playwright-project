@@ -164,7 +164,7 @@ await expect( page.getByRole('searchbox')).toHaveValue('hoge');
 
 });
 
-
+//このテストは以前と比べて安定したけど、その代償としてブラウザ操作と直接関係ないコードが増えて理解しづらい
 test('tab practice6', async ({ page ,context}) => {
 await page.goto('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe');
 
