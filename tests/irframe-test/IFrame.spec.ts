@@ -60,6 +60,9 @@ iframe × 複数タブの複合問題（最上級）
 
 */
 
+
+//ここのテストはWebサイトの仕様、例えばiframeが多用されていたり、広告の影響でとにかくflakyです。
+
 test('irFrame practice1', async ({ page }) => {
 
 await page.goto('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe');
@@ -161,29 +164,33 @@ await expect( page.getByRole('searchbox')).toHaveValue('hoge');
 
 });
 
-test('tab practice6', async ({ page }) => {
+
+test('tab practice6', async ({ page ,context}) => {
 await page.goto('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe');
 
 await page.waitForLoadState('domcontentloaded');
 
-  const frame = page.frames().find(f =>
-    f.url().includes('w3schools.com')
-  );
-const link = frame!.getByRole('link', { name: 'JAVASCRIPT', exact: true });
-await link.waitFor();
-const url = await link.evaluate((el: HTMLAnchorElement ) => el.href);
+const iframeLocator = page.frameLocator('#iframeResult')
+  .frameLocator('iframe[title="W3Schools Free Online Web Tutorials"]');
+
+const link = iframeLocator.getByRole('link', { name: 'JAVASCRIPT', exact: true });
+
+const linkHandle = await link.elementHandle();
+await linkHandle!.evaluate((el: HTMLAnchorElement) => {
+  el.setAttribute('target', '_blank');
+});
 
 const [newTab] = await Promise.all([
-  page.waitForEvent('popup'),
-  frame!.evaluate(url => window.open(url), url),
+context.waitForEvent('page'),
+link.click(),
 ]);
 
-await newTab.waitForLoadState('domcontentloaded');
-expect ( (await newTab.title())).toBe('JavaScript Tutorial');
+await newTab.waitForFunction(() => document.title !== 'about:blank');
+expect(await newTab.title()).toBe('JavaScript Tutorial');
 
 await newTab.close();
 await page.waitForLoadState();
 
- await frame!.locator('a:has-text("CSS")').click();
+await link.click();
 
 });
