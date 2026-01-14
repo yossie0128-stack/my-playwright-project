@@ -12,9 +12,7 @@ Playwright を用いた E2E テスト自動化プロジェクトです。
 - GitHub Actions を用いた CI/CD パイプラインの構築
 - 実務レベルの自動化基盤を短期間で構築できることの証明
 
-
 ![自動テストが失敗した場合、画像のように分かりやすく何処で失敗したのか知らせてくれます](./images/screen-trace.png)
-
 🚀 特徴（Features）
 1. Page Object Model（POM）による拡張性の高い構造
 - ページごとに責務を分離
