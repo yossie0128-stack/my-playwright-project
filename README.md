@@ -16,7 +16,7 @@ Playwright を用いた UI × API の E2E テスト自動化プロジェクト�
 - GitHub Actions を用いた CI/CD パイプラインの構築
 - 実務レベルの自動化基盤を短期間で構築できることの証明
 
-自動テストが失敗した場合、画像のように分かりやすく何処で失敗したのか知らせてくれます](./images/screen-trace.png)
+[自動テストが失敗した場合、画像のように分かりやすく何処で失敗したのか知らせてくれます](./images/screen-trace.png)
 
 🚀 特徴（Features）
 1. UI × API の統合テスト
