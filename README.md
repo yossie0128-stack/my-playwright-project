@@ -1,3 +1,5 @@
+[English README](README.en.md)
+
 my-playwright-project
 Playwright を用いた UI × API の E2E テスト自動化プロジェクトです。
 開発環境構築から自動化基盤の整備、API テスト、CI/CD 統合までを 10 日以内で構築し、
