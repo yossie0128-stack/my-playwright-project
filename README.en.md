@@ -1,4 +1,4 @@
-# my-playwright-project  
+# my-playwright-project  ("Bridging the gap between 10 years of QA expertise and modern automated testing.")
 A practical end-to-end (E2E) test automation project built with **Playwright × TypeScript**.  
 This project focuses not only on UI automation, but also on **reducing operational costs** and **ensuring test reliability**, aiming to provide a structure that can be introduced and maintained immediately in real-world development environments.
 
