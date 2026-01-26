@@ -1,6 +1,7 @@
 [English README](README.en.md)
 
-my-playwright-project
+my-playwright-project(Playwright を用いた UI テスト自動化のデモとして作成。ブランク期間中のキャッチアップとして、最新の自動化手法を短期間で習得するために構築。)
+
 Playwright を用いた UI × API の E2E テスト自動化プロジェクトです。
 開発環境構築から自動化基盤の整備、API テスト、CI/CD 統合までを 10 日以内で構築し、
 実務でそのまま活用できるレベルのテスト基盤を再現しています。
