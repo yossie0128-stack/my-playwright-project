@@ -6,34 +6,35 @@ my-playwright-project
 
 本プロジェクトは、Playwright を用いて UI × API の E2E テスト自動化基盤を 10 日以内で構築した実践デモです。
 開発環境構築から自動化基盤の整備、API テスト、POM 設計、CI/CD 統合までを一通り実装し、実務でそのまま利用できるレベルのテスト基盤を再現しています。
+
 🎯 プロジェクトの目的
 
-    Playwright を用いた UI テスト自動化の実践
+    Playwrightを用いたUIテスト自動化の実践
 
-    REST API を対象とした API テストの導入
+    REST APIを対象としたAPIテストの導入
 
-    UI と API を組み合わせた統合テストの構築
+    UIとAPIを組み合わせた統合テストの構築
 
     Page Object Model（POM）によるテスト構造化
 
-    Flaky を抑えるための安定化設計
+    Flaktを抑えるための安定化設計
 
     並列実行・shard による高速化
 
-    GitHub Actions を用いた CI/CD パイプライン構築
+    GitHub Actionsを用いたCI/CD パイプライン構築
 
     短期間で実務レベルの自動化基盤を構築できるスキルの証明
 
 🚀 特徴（Features）
 ■ UI × API の統合テスト
 
-    Playwright の request API を使用
+    Playwrightのrequest API を使用
 
     GET / POST / PUT / DELETE を網羅
 
     ステータスコード・レスポンスボディの検証
 
-    UI と API を組み合わせたシナリオテストに対応
+    UIとAPI を組み合わせたシナリオテストに対応
 
 ■ Page Object Model（POM）による拡張性
 
@@ -43,7 +44,7 @@ my-playwright-project
 
     実務で一般的な構成を採用
 
-■ Flaky を抑える安定化設計
+■ Flakyを抑える安定化設計
 
     適切なロケータ選定
 
@@ -53,22 +54,22 @@ my-playwright-project
 
     明示的な待機の最小化
 
-    CI 環境を考慮したリトライ戦略
+    CI環境を考慮したリトライ戦略
 
-    個人環境の CI ランナーでは一部 Flaky が発生するが、実務では高性能ランナーを選択することで解消可能
+    個人環境の CIランナーでは一部 Flaky が発生するが、実務では高性能ランナーを選択することで解消可能
 
        
 ■ 並列実行・shard による高速化
 
-    Playwright の並列実行機能を活用
+    Playwrightの並列実行機能を活用
 
-    CI 上でも高速に動作するよう最適化
+    CI上でも高速に動作するよう最適化
 
-■ GitHub Actions による CI/CD 統合
+■ GitHub Actions によるCI/CD統合
 
-    push / PR 時に自動テスト実行
+    push/PR 時に自動テスト実行
 
-    UI / API テストを並列で実行
+    UI/API テストを並列で実行
 
     動画・スクリーンショットの保存
 
@@ -80,17 +81,17 @@ my-playwright-project
 
     Playwright セットアップ
 
-    UI テスト実装
+    UIテスト実装
 
-    API テスト実装
+    APIテスト実装
 
-    POM 設計
+    POM設計
 
-    Flaky 対策
+    Flaky対策
 
     並列実行設定
 
-    GitHub Actions による CI/CD パイプライン構築
+    GitHub Actions によるCI/CDパイプライン構築
 
 📁 ディレクトリ構成（抜粋）
 コード
@@ -113,24 +114,24 @@ my-playwright-project/
     依存関係インストール
     npm install
 
-    UI テスト
+    UI スト
     npx playwright test tests/ui
 
-    API テスト
+    APIテスト
     npx playwright test tests/api
 
-    UI モード
+    UIモード
     npx playwright test --ui
 
 📌 今後の拡張予定
 
-    ディレクトリ構造の整理（pages / components を src 配下へ移動）
+    ディレクトリ構造の整理（pages / componentsをsrc 配下へ移動）
 
-    fixtures の導入（過度な抽象化を避け、POM の DI は採用しない方針）
+    fixturesの導入（過度な抽象化を避け、POMのDIは採用しない方針）
 
-    テストランナーを Linux へ変更（Playwright 推奨・無料枠でも高性能）
+    テストランナーをLinuxへ変更（Playwright 推奨・無料枠でも高性能）
 
-    API モックサーバーとの統合
+    APIモックサーバーとの統合
 
     テストデータ管理の改善
 
