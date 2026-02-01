@@ -1,111 +1,141 @@
 [English README](README.en.md)
 
-my-playwright-project(Playwright を用いた UI テスト自動化のデモとして作成。ブランク期間中のキャッチアップとして、最新の自動化手法を短期間で習得するために構築。)
+my-playwright-project
 
-Playwright を用いた UI × API の E2E テスト自動化プロジェクトです。
-開発環境構築から自動化基盤の整備、API テスト、CI/CD 統合までを 10 日以内で構築し、
-実務でそのまま活用できるレベルのテスト基盤を再現しています。
+（Playwright を用いた UI / API E2E テスト自動化デモ。ブランク期間中のキャッチアップとして、最新の自動化手法を短期間で習得するために構築。）
 
-🎯 プロジェクト概要
-このリポジトリは、以下を目的として構築しています。
-- Playwright を用いた UI テスト自動化の実践
-- API テストの導入（REST API の検証）
-- UI と API を組み合わせた統合テスト
-- Page Object Model（POM）によるテスト構造化
-- Flaky を抑えるための安定化設計
-- 並列実行・shard による高速化
-- GitHub Actions を用いた CI/CD パイプラインの構築
-- 実務レベルの自動化基盤を短期間で構築できることの証明
-![テスト失敗時の表示](./images/screen-trace.png)
+本プロジェクトは、Playwright を用いて UI × API の E2E テスト自動化基盤を 10 日以内で構築した実践デモです。
+開発環境構築から自動化基盤の整備、API テスト、POM 設計、CI/CD 統合までを一通り実装し、実務でそのまま利用できるレベルのテスト基盤を再現しています。
+🎯 プロジェクトの目的
 
+    Playwright を用いた UI テスト自動化の実践
+
+    REST API を対象とした API テストの導入
+
+    UI と API を組み合わせた統合テストの構築
+
+    Page Object Model（POM）によるテスト構造化
+
+    Flaky を抑えるための安定化設計
+
+    並列実行・shard による高速化
+
+    GitHub Actions を用いた CI/CD パイプライン構築
+
+    短期間で実務レベルの自動化基盤を構築できるスキルの証明
 
 🚀 特徴（Features）
-1. UI × API の統合テスト
-- Playwright の request API を使用
-- GET / POST / PUT / DELETE の基本操作を網羅
-- ステータスコード・レスポンスボディの検証
-- UI と API を組み合わせたシナリオテストも可能
-2. Page Object Model（POM）による拡張性の高い構造
-- ページごとに責務を分離
-- テストコードの可読性・保守性を向上
-- 実務で一般的な構成を採用
-3. Flaky を抑えるための安定化
-- 適切なロケータ選定
-- iframe 対応（frameLocator）
-- 遅延読み込みへの対策
-- 明示的な待機ポイントの最小化
-- CI環境の特性を考慮したリトライ戦略とテスト粒度の最適化 
-- 個人環境のため最低限のCIランナーを使用しているためどうしてもローカル環境では安定しているテストがCI環境に持ち込むとFlakyになっていますが、実務の場合は高性能のCIランナーを選択することにより、CI環境でもFlakyにならないようにできます。これはエンジニアの工数をCI環境でのスペック不足によるFlaky対応に割くよりも人件費の観点から極めて効率的です。
-4. 並列実行・shard による高速化
-- Playwright の並列実行機能を活用
-- CI 上でも高速に動作するよう最適化
-5. GitHub Actions による CI/CD 統合
-- push / PR 時に自動でテスト実行
-- 成果物（動画・スクリーンショット）の保存
-- 実務のワークフローを再現
+■ UI × API の統合テスト
 
-🕒 開発環境構築〜UI/API 自動化〜CI/CD 統合を 10 日以内で完了
-このプロジェクトは、以下の工程を 10 日以内で構築しています。
-- Playwright のセットアップ
-- UI テストの実装
-- API テストの実装
-- POM 設計
-- Flaky 対策
-- 並列実行の設定
-- GitHub Actions による CI/CD パイプライン構築
-短期間でのキャッチアップと基盤構築能力を示す実例として活用できます。
+    Playwright の request API を使用
 
-📁 ディレクトリ構成
+    GET / POST / PUT / DELETE を網羅
+
+    ステータスコード・レスポンスボディの検証
+
+    UI と API を組み合わせたシナリオテストに対応
+
+■ Page Object Model（POM）による拡張性
+
+    ページ単位で責務を分離
+
+    テストコードの可読性・保守性を向上
+
+    実務で一般的な構成を採用
+
+■ Flaky を抑える安定化設計
+
+    適切なロケータ選定
+
+    iframe（frameLocator）対応
+
+    遅延読み込みへの対策
+
+    明示的な待機の最小化
+
+    CI 環境を考慮したリトライ戦略
+
+    個人環境の CI ランナーでは一部 Flaky が発生するが、実務では高性能ランナーを選択することで解消可能
+
+       
+■ 並列実行・shard による高速化
+
+    Playwright の並列実行機能を活用
+
+    CI 上でも高速に動作するよう最適化
+
+■ GitHub Actions による CI/CD 統合
+
+    push / PR 時に自動テスト実行
+
+    UI / API テストを並列で実行
+
+    動画・スクリーンショットの保存
+
+    実務のワークフローを再現
+
+🕒 10 日以内で構築した内容
+
+以下の工程を短期間で完了し、キャッチアップ能力と基盤構築力を示しています。
+
+    Playwright セットアップ
+
+    UI テスト実装
+
+    API テスト実装
+
+    POM 設計
+
+    Flaky 対策
+
+    並列実行設定
+
+    GitHub Actions による CI/CD パイプライン構築
+
+📁 ディレクトリ構成（抜粋）
+コード
+
 my-playwright-project/
 ├── playwright.config.ts
 ├── package.json
 ├── tests/
 │   ├── ui/
-│   │   └── example.spec.ts
 │   ├── api/
-│   │   └── api-example.spec.ts
-│   └── ...
 ├── pages/
 │   ├── LoginPage.ts
 │   ├── DashboardPage.ts
-│   └── ...
 └── .github/
     └── workflows/
         └── playwright.yml
 
-
-
 🧪 実行方法
-依存関係のインストール
-npm install
 
+    依存関係インストール
+    npm install
 
-UI テスト実行
-npx playwright test tests/ui
+    UI テスト
+    npx playwright test tests/ui
 
+    API テスト
+    npx playwright test tests/api
 
-API テスト実行
-npx playwright test tests/api
-
-
-UI モード
-npx playwright test --ui
-
-
-
-🔧 CI/CD（GitHub Actions）
-- push / PR 時に自動実行
-- UI / API テストを並列で実行
-- 動画・スクリーンショットの保存
-- 実務で使える構成を採用
+    UI モード
+    npx playwright test --ui
 
 📌 今後の拡張予定
-- ディレクトリ構造の変更 pages,componentsを/srcの下に入れる
-- fixturesの導入。(今回はテスト規模が小さく必要無かったため後回しになった。)　その場合も抽象化が高まりすぎて属人化しそうなPOMのDIは導入しない。
-- テストランナーを無料枠でも性能が良く、Playwrightも推奨しているLinuxに変更
-- API モックサーバーとの統合
-- テストデータ管理の改善
-- UI × API の複雑な統合シナリオ追加
-- 負荷テストとの連携
+
+    ディレクトリ構造の整理（pages / components を src 配下へ移動）
+
+    fixtures の導入（過度な抽象化を避け、POM の DI は採用しない方針）
+
+    テストランナーを Linux へ変更（Playwright 推奨・無料枠でも高性能）
+
+    API モックサーバーとの統合
+
+    テストデータ管理の改善
+
+    UI × API の複雑な統合シナリオ追加
+
+    負荷テストとの連携
 
 
