@@ -2,8 +2,6 @@ import { Page, Locator, expect } from '@playwright/test';
 import { docURL } from '../data/playWrightPageURL';
 import { createSamplePackageTab,runSamplePackageTab,reportSamplePackageTab,testSamplePackageTab,updateSamplePackageTab,versionSamplePackageTab} from '../data/docPage';
 import { TabCodeBlock } from '../components/TabCodeBlock';
-import { LeftSidebar} from './DocPage/LeftSidebar';
-import { RightSidebar} from './DocPage/RightSidebar';
 import { BasePage } from './BasePage';
 
 export class InstallationPage extends BasePage{

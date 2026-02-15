@@ -47,7 +47,9 @@ https://www.file.io/
 test('file upload practice1', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/upload');
 
-  const filePath = path.join('.\\tests\\download-test\\', 'dummy.txt');
+  
+  const file = 'dummy.txt';
+  const filePath = path.join('tests','download-test', file);
 
   await page.setInputFiles('#file-upload', filePath);
 
@@ -61,7 +63,7 @@ test('file download practice1', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/download');
 
   const file = 'test.txt';
-  const savePath = path.join('.\\tests\\download-test\\', file);
+  const savePath =path.join('tests', 'download-test', file)
 
   const [download] = await Promise.all([
     page.waitForEvent('download'),
