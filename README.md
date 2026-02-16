@@ -114,7 +114,7 @@ my-playwright-project/
     依存関係インストール
     npm install
 
-    UI スト
+    UIテスト
     npx playwright test tests/ui
 
     APIテスト
