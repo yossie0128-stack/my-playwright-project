@@ -125,18 +125,18 @@ my-playwright-project/
 
 📌 今後の拡張予定
 
-    ディレクトリ構造の整理（pages / componentsをsrc 配下へ移動）
+ディレクトリ構造の整理（pages / componentsをsrc 配下へ移動）
 
-    fixturesの導入（過度な抽象化を避け、POMのDIは採用しない方針）
+fixturesの導入（過度な抽象化を避け、POMのDIは採用しない方針）
 
-    テストランナーをLinuxへ変更（Playwright 推奨・無料枠でも高性能）
+~~テストランナーをLinuxへ変更（Playwright 推奨・無料枠でも高性能）~~ -> 変更を行ったら50%ほど速くなった上、iframeの処理が安定するようになった。
 
-    APIモックサーバーとの統合
+APIモックサーバーとの統合
 
-    テストデータ管理の改善
+テストデータ管理の改善
 
-    UI × API の複雑な統合シナリオ追加
+UI × API の複雑な統合シナリオ追加
 
-    負荷テストとの連携
+負荷テストとの連携
 
 
