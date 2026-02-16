@@ -104,7 +104,8 @@ await page.locator('#default-editor_ifr').contentFrame().locator('..').locator('
 test('irFrame practice3', async ({ page }) => {
 await page.goto('https://stripe.com/docs/payments/accept-a-payment?platform=web&ui=elements');
 
-//const paymentFrame = page.frameLocator('iframe[name^="__privateStripeFrame"]');
+await page.getByRole('radio', { name: 'Elements' }).click();
+
 const paymentFrame = page.frameLocator('iframe[title="Secure payment input frame"][src*="inner-payment"]:visible');
 
 await paymentFrame.getByRole('button', { name: /Card/i}).filter({ visible: true }).click();
@@ -126,6 +127,8 @@ await paymentFrame.getByRole('textbox', { name: /Security code/i }).fill('123');
 //このページが参考資料のためかsubmit buttonが出ないため、その処理は行わない
 
 });
+
+
 
 test('tab practice4', async ({ page }) => {
 await page.goto('https://the-internet.herokuapp.com/windows');
