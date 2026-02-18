@@ -10,23 +10,21 @@ jobs:
   test:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    
+    # 公式イメージをタグ付きで指定（Node.jsとブラウザが同梱されています）
     container:
-      image: ://mcr.microsoft.com 
+      image: ://mcr.microsoft.com
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-
+      # コンテナにNode.jsが含まれているため setup-node は不要ですが、
+      # npmキャッシュを利用したい場合のみ残します（今回はシンプルにするため省略可能）
       - name: Install dependencies
         run: npm ci
 
-      - name: Ensure Browsers are ready
-        run: npx playwright install chromium
-
+      # 公式イメージにはブラウザが入っているため install chromium は不要です
+      # 依存関係が不足している場合のみ install-deps を実行しますが、通常は不要です
       - name: Run Playwright tests
         run: npx playwright test --project=chromium --workers=1
 
@@ -36,7 +34,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-        
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
