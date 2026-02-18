@@ -17,10 +17,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        cache: 'npm'
+          cache: 'npm'
 
       - name: Cache Playwright Browsers
         id: playwright-cache
