@@ -8,23 +8,22 @@ on:
 jobs:
   test:
     timeout-minutes: 10
-    runs-on: ubuntu-latest
-    
-    # ポイント1：プロトコル(://)を消し、タグを明示する
-    # ※タグはプロジェクトのPlaywrightバージョンに合わせて適宜変更してください
-    container:
-      image: ://mcr.microsoft.com
-
+    runs-on: ubuntu-latest  # コンテナ指定（container:）を消しました
     steps:
       - uses: actions/checkout@v4
 
-      # ポイント2：公式イメージにはNode.jsが入っているので setup-node は不要（削る）
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      # ポイント3：公式イメージにはブラウザが入っているので install は不要（削る）
-      # もし実行時に「ブラウザがない」と怒られたら、ここだけ戻してください
+      # ここでブラウザと必要なシステムライブラリをインストール
+  #    - name: Install Playwright Browsers
+ #       run: npx playwright install --with-deps chromium
+
       - name: Run Playwright tests
         run: npx playwright test --project=chromium --workers=1
 
