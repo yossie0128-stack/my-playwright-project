@@ -8,8 +8,10 @@ on:
 
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 10
     runs-on: ubuntu-latest
+    container:
+      image: ://mcr.microsoft.com 
 
     steps:
       - uses: actions/checkout@v4
@@ -22,15 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Cache Playwright Browsers
-        id: playwright-cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium 
+      - name: Ensure Browsers are ready
+        run: npx playwright install chromium
 
       - name: Run Playwright tests
         run: npx playwright test --project=chromium --workers=1
