@@ -41,6 +41,8 @@ API のレスポンスから
 UI が両方のデータを正しく表示するか確認する。
 サーバー上にはvegetablesが無いのでそれっぽいコードを書いておく。
 
+
+request() を使う練習コードを書こう
 */
 
 test('API mocking practice', async ({ page }) => {
