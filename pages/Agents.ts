@@ -18,7 +18,7 @@ export class Agents extends BasePage{
     }
     async checkAgentsPageTab(){
     await this.page.getByRole('button', { name: 'Playwright Test', exact: true }).click();
-    await this.page.getByRole('link', { name: 'Agents' }).click();
+    await this.page.getByRole('link', { name: 'Agents', exact: true }).click();
 
     await this.tabCodeBlock.checkTab(testAgentsTabCases ,'VS CodeClaude CodeOpenCodenpx' );
     await this.tabCodeBlock.checkCopyButton(testAgentsTabCases ,'VS CodeClaude CodeOpenCodenpx');
