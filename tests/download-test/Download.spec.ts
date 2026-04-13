@@ -67,7 +67,7 @@ test('file download practice1', async ({ page }) => {
 
   const [download] = await Promise.all([
     page.waitForEvent('download'),
-    page.getByRole('link', { name: file, exact: true }).click(),
+    page.getByRole('link', { name: file, exact: true }).click()
   ]);
 
   await download.saveAs(savePath);

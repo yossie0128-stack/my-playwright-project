@@ -25,7 +25,7 @@ export class LeftSidebar {
     }
  
     async goAgents(){
-    await this.page.getByRole('link', { name: 'Agents' }).click();
+    await this.page.getByRole('link', { name: 'Agents', exact: true }).click();
     }
 
 }
