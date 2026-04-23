@@ -1,18 +1,11 @@
 import fs from "fs";
 import path from "path";
 
+const results = {};
 const artifactsDir = "artifacts";
-const results = {}; // { title: { success: X, fail: Y } }
 
-const files = fs.readdirSync(artifactsDir);
-
-files.forEach((folder) => {
-  const resultPath = path.join(artifactsDir, folder, "result.json");
-  if (!fs.existsSync(resultPath)) return;
-
-  const json = JSON.parse(fs.readFileSync(resultPath, "utf-8"));
-
-  json.suites.forEach((suite) => {
+function walkSuite(suite) {
+  if (suite.specs) {
     suite.specs.forEach((spec) => {
       const title = spec.title;
       const status = spec.ok ? "success" : "fail";
@@ -22,7 +15,24 @@ files.forEach((folder) => {
       }
       results[title][status]++;
     });
-  });
+  }
+
+  if (suite.suites) {
+    suite.suites.forEach(walkSuite);
+  }
+}
+
+const files = fs.readdirSync(artifactsDir);
+
+files.forEach((folder) => {
+  const resultPath = path.join(artifactsDir, folder, "result.json");
+  if (!fs.existsSync(resultPath)) return;
+
+  const json = JSON.parse(fs.readFileSync(resultPath, "utf-8"));
+
+  if (json.suites) {
+    json.suites.forEach(walkSuite);
+  }
 });
 
 const summary = Object.entries(results).map(([title, r]) => {
@@ -36,6 +46,4 @@ const summary = Object.entries(results).map(([title, r]) => {
 });
 
 fs.writeFileSync("flaky-summary.json", JSON.stringify(summary, null, 2));
-
-console.log("=== Flaky Summary ===");
-console.table(summary);
+console.log("Generated flaky-summary.json");
