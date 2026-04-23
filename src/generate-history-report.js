@@ -10,7 +10,8 @@ const dates = history.map(h => h.date);
 const testNames = new Set();
 for (const h of history) {
   for (const item of h.summary) {
-    testNames.add(item.test);
+    const testName = item.test || item.title;
+    testNames.add(testName);
   }
 }
 
@@ -19,7 +20,7 @@ const table = {};
 for (const test of testNames) {
   table[test] = {};
   for (const date of dates) {
-    table[test][date] = null; // 初期値
+    table[test][date] = null;
   }
 }
 
@@ -27,7 +28,8 @@ for (const test of testNames) {
 for (const h of history) {
   const date = h.date;
   for (const item of h.summary) {
-    table[item.test][date] = item.fail > 0 ? "fail" : "success";
+    const testName = item.test || item.title;
+    table[testName][date] = item.fail > 0 ? "fail" : "success";
   }
 }
 
@@ -36,7 +38,7 @@ const html = `
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Flaky History Table</title>
+  <title>Flaky Test History</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
     table { border-collapse: collapse; width: 100%; }
