@@ -27,10 +27,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: |
-        - name: Run Playwright tests
-         run: npx playwright test --project=chromium --workers=1
-
+        run: npx playwright test --project=chromium --workers=1
 
       # ★ flaky 集計用 JSON をアップロード
       - name: Upload JSON test result
@@ -41,8 +38,9 @@ jobs:
           retention-days: 30
 
       # ★ Playwright の HTML レポートもアップロード（任意）
-      - uses: actions/upload-artifact@v4
+      - name: Upload Playwright HTML report
         if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-html-report
           path: playwright-report/
@@ -55,7 +53,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # ★ test job の artifact をダウンロード（ここが重要）
+      # ★ test job の artifact をダウンロード
       - name: Download JSON artifact
         uses: actions/download-artifact@v4
         with:
