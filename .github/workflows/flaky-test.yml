@@ -10,26 +10,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download all artifacts
+      # ★ Playwright Tests workflow でアップロードした JSON artifact を取得
+      - name: Download JSON artifacts
         uses: actions/download-artifact@v4
         with:
+          name: playwright-json-result
           path: artifacts
 
       - name: Install deps
         run: npm ci
 
+      # ★ JSON を集計して flaky-summary.json を生成
       - name: Run flaky analyzer
         run: node src/analyze-flaky.js
 
+      # ★ flaky-summary.json → flaky-report.html を生成
       - name: Generate HTML report
         run: node src/generate-flaky-html.js
 
+      # ★ JSON summary を artifact として保存
       - name: Upload flaky summary (JSON)
         uses: actions/upload-artifact@v4
         with:
           name: flaky-summary
           path: flaky-summary.json
 
+      # ★ HTML レポートも artifact として保存
       - name: Upload flaky HTML report
         uses: actions/upload-artifact@v4
         with:
