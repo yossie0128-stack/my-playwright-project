@@ -31,9 +31,8 @@ jobs:
          npx playwright test \
          --project=chromium \
          --workers=1 \
-          --reporter=json
-  env:
-    PLAYWRIGHT_JSON_OUTPUT_NAME: result.json
+         --reporter=json=result.json
+
 
 
       # ★ flaky 集計用 JSON をアップロード
