@@ -28,10 +28,9 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-         npx playwright test \
-         --project=chromium \
-         --workers=1 \
-         --reporter=list --reporter=json=result.json
+        - name: Run Playwright tests
+         run: npx playwright test --project=chromium --workers=1
+
 
       # ★ flaky 集計用 JSON をアップロード
       - name: Upload JSON test result
