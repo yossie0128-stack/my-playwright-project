@@ -26,12 +26,12 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
- - name: Run Playwright tests
-  run: |
-    npx playwright test \
-      --project=chromium \
-      --workers=1 \
-      --reporter=json
+      - name: Run Playwright tests
+        run: |
+         npx playwright test \
+         --project=chromium \
+         --workers=1 \
+          --reporter=json
   env:
     PLAYWRIGHT_JSON_OUTPUT_NAME: result.json
 
