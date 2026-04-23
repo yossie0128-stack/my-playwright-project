@@ -33,7 +33,7 @@ jobs:
             --reporter=json \
             > result.json
 
-      # ★ flaky 集計用の JSON をアップロード
+      # ★ flaky 集計用 JSON をアップロード
       - name: Upload JSON test result
         uses: actions/upload-artifact@v4
         with:
