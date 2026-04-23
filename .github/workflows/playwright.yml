@@ -46,9 +46,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-        ref: gh-pages
-        fetch-depth: 0   
-        
+           ref: gh-pages
+           fetch-depth: 0   
+
       - name: Create gh-pages branch if not exists
         run: |
           if ! git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
