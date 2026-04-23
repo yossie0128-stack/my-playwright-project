@@ -22,7 +22,6 @@ export class PlaywrightHeader {
     this.logo = page.getByRole('link', { name: 'Playwright logo Playwright' })
     this.docs = page.getByRole('link', { name: 'Docs', exact: true });
     this.api = page.getByRole('link', { name: 'API', exact: true });
-    this.community = page.getByRole('link', { name: 'Community' });
     this.nodeJS = page.getByRole('button', { name: 'Node.js' });
     this.gitHubLink = page.getByRole('link', { name: 'GitHub repository' });
     this.discordLink = page.getByRole('link', { name: 'Discord server', exact: true });
@@ -46,9 +45,7 @@ export class PlaywrightHeader {
       await this.api.click();
     }
 
-    async clickCommunity(){
-      await this.community.click();
-    }
+ 
 
 async clickNodeJsMenuItem(target: string) {
 

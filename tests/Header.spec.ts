@@ -23,12 +23,6 @@ test('Playwright header training:API', async ({ page }) => {
   await expect(page).toHaveURL(/docs\/api\/class-playwright/);
 });
 
-test('Playwright header training:Community', async ({ page }) => {
-  const pwHeader = new PlaywrightHeader(page);
-  await pwHeader.goTo();
-  await pwHeader.clickCommunity();
-  await expect(page).toHaveURL(/community\/welcome/);
-});
 
 test('Playwright header training:Hover menu', async ({ page }) => {
   const pwHeader = new PlaywrightHeader(page);

@@ -25,7 +25,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: npx playwright test --project=chromium --workers=1
+        run: npx playwright test --project=chromium --workers=1 --reporter=json --output=result.json
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

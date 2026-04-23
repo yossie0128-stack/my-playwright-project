@@ -1,0 +1,37 @@
+name: Flaky Score
+
+on:
+  workflow_dispatch:
+
+jobs:
+  flaky:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run flaky analyzer
+        run: node src/analyze-flaky.js
+
+      - name: Generate HTML report
+        run: node src/generate-flaky-html.js
+
+      - name: Upload flaky summary (JSON)
+        uses: actions/upload-artifact@v4
+        with:
+          name: flaky-summary
+          path: flaky-summary.json
+
+      - name: Upload flaky HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: flaky-html-report
+          path: flaky-report.html

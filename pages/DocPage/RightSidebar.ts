@@ -16,8 +16,11 @@ export class RightSidebar {
   }
 
   async checkLinkCount(){
+  // 'IntroductionFirst' を含む右サイドバー領域内の link をカウント
   const links = this.page.getByText('IntroductionFirst').getByRole('link');
-  expect(await links.count()).toBeGreaterThan(3);
+  await expect(links.first()).toBeVisible(); // 最初の1つが出るまで待機
+  const count = await links.count();
+  expect(count).toBeGreaterThan(3);
   }
 }
 
