@@ -1,10 +1,11 @@
-name: Playwright Tests
+name: Playwright Tests + Flaky Score
 
 on:
   push:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -48,3 +49,28 @@ jobs:
           name: playwright-html-report
           path: playwright-report/
           retention-days: 30
+
+  flaky:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ★ test job の artifact をダウンロード（ここが重要）
+      - name: Download JSON artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-json-result
+          path: artifacts
+
+      - name: Install deps
+        run: npm ci
+
+      # ★ flaky-summary.json を生成
+      - name: Run flaky analyzer
+        run: node src/analyze-flaky.js
+
+      # ★ flaky-report.html を生成
+      - name: Generate HTML report
+        run
