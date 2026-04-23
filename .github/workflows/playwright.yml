@@ -46,8 +46,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: gh-pages   # ← 履歴を保存するブランチをチェックアウト
-
+        ref: gh-pages
+        fetch-depth: 0   
+        
       - name: Create gh-pages branch if not exists
         run: |
           if ! git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
@@ -62,8 +63,7 @@ jobs:
             echo "gh-pages exists."
           fi
 
-      
-
+    
       - name: Download JSON artifact
         uses: actions/download-artifact@v4
         with:
