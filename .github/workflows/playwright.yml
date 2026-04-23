@@ -1,5 +1,8 @@
 name: Playwright Tests + Flaky History
 
+permissions:
+  contents: write
+
 on:
   push:
     branches: [main, master]
