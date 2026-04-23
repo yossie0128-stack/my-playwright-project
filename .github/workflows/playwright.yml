@@ -31,9 +31,7 @@ jobs:
          npx playwright test \
          --project=chromium \
          --workers=1 \
-         --reporter=json=result.json
-
-
+         --reporter=list --reporter=json=result.json
 
       # ★ flaky 集計用 JSON をアップロード
       - name: Upload JSON test result
