@@ -1,6 +1,13 @@
 import fs from "fs";
 
-const json = JSON.parse(fs.readFileSync("artifacts/playwright-json-result/result.json", "utf-8"));
+const path = "artifacts/result.json";
+
+if (!fs.existsSync(path)) {
+  throw new Error(`JSON file not found: ${path}`);
+}
+
+const json = JSON.parse(fs.readFileSync(path, "utf-8"));
+
 
 const results = {};
 
