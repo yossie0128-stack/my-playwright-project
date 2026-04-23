@@ -123,7 +123,7 @@ my-playwright-project/
     npx playwright test --ui
   
 Flakyテストの統計
-https://yossie0128-stack.github.io/my-playwright-project/flaky-report.html
+https://yossie0128-stack.github.io/my-playwright-project/history-report.html
 
 📌 今後の拡張予定
 

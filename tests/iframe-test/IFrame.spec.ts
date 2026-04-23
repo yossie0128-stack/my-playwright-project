@@ -63,7 +63,7 @@ iframe × 複数タブの複合問題（最上級）
 
 //ここのテストはWebサイトの仕様、例えばiframeが多用されていたり、広告の影響でとにかくflakyです。
 
-test('irFrame practice1', async ({ page }) => {
+test('iFrame practice1', async ({ page }) => {
 
 await page.goto('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe');
 
@@ -88,7 +88,7 @@ const iframeLocator = page
 });
 
 
-test('irFrame practice2', async ({ page }) => {
+test('iFrame practice2', async ({ page }) => {
 await page.goto('https://www.tiny.cloud/docs/tinymce/latest/');
 const iframe = page.frameLocator('#default-editor_ifr');
 
@@ -101,7 +101,7 @@ await page.locator('#default-editor_ifr').contentFrame().locator('..').locator('
 });
 
 
-test('irFrame practice3', async ({ page }) => {
+test('iFrame practice3', async ({ page }) => {
 await page.goto('https://stripe.com/docs/payments/accept-a-payment?platform=web&ui=elements');
 
 await page.getByRole('radio', { name: 'Elements' }).click();
