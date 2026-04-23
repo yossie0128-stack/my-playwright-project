@@ -73,4 +73,18 @@ jobs:
 
       # ★ flaky-report.html を生成
       - name: Generate HTML report
-        run
+        run: node src/generate-flaky-html.js
+
+      # ★ JSON summary を artifact として保存
+      - name: Upload flaky summary (JSON)
+        uses: actions/upload-artifact@v4
+        with:
+          name: flaky-summary
+          path: flaky-summary.json
+
+      # ★ HTML レポートも artifact として保存
+      - name: Upload flaky HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: flaky-html-report
+          path: flaky-report.html
