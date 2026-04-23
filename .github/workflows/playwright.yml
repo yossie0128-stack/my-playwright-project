@@ -48,6 +48,22 @@ jobs:
         with:
           ref: gh-pages   # ← 履歴を保存するブランチをチェックアウト
 
+      - name: Create gh-pages branch if not exists
+        run: |
+          if ! git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            echo "gh-pages does not exist. Creating..."
+            git checkout --orphan gh-pages
+            git rm -rf .
+            echo "<html><body><h1>Initializing gh-pages</h1></body></html>" > index.html
+            git add index.html
+            git commit -m "Initialize gh-pages"
+            git push origin gh-pages
+          else
+            echo "gh-pages exists."
+          fi
+
+      
+
       - name: Download JSON artifact
         uses: actions/download-artifact@v4
         with:
