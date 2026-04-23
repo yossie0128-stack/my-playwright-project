@@ -1,4 +1,4 @@
-name: Playwright Tests + Flaky Score
+name: Playwright Tests + Flaky History
 
 on:
   push:
@@ -29,21 +29,11 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --project=chromium --workers=1
 
-      # ★ flaky 集計用 JSON をアップロード
       - name: Upload JSON test result
         uses: actions/upload-artifact@v4
         with:
           name: playwright-json-result
           path: result.json
-          retention-days: 30
-
-      # ★ Playwright の HTML レポートもアップロード（任意）
-      - name: Upload Playwright HTML report
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-html-report
-          path: playwright-report/
           retention-days: 30
 
   flaky:
@@ -52,8 +42,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: gh-pages   # ← 履歴を保存するブランチをチェックアウト
 
-      # ★ test job の artifact をダウンロード
       - name: Download JSON artifact
         uses: actions/download-artifact@v4
         with:
@@ -63,27 +54,32 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # ★ flaky-summary.json を生成
       - name: Run flaky analyzer
         run: node src/analyze-flaky.js
 
-      # ★ flaky-report.html を生成
-      - name: Generate HTML report
-        run: node src/generate-flaky-html.js
+      # ★ 履歴を保存
+      - name: Save history
+        run: |
+          DATE=$(date +'%Y-%m-%d')
+          mkdir -p history/$DATE
+          cp flaky-summary.json history/$DATE/
+        shell: bash
 
-      # ★ JSON summary を artifact として保存
-      - name: Upload flaky summary (JSON)
-        uses: actions/upload-artifact@v4
-        with:
-          name: flaky-summary
-          path: flaky-summary.json
+      # ★ 履歴データをまとめる（history-data.json を生成）
+      - name: Generate history data
+        run: node src/generate-history-data.js
 
-      # ★ HTML レポートも artifact として保存
-      - name: Upload flaky HTML report
-        uses: actions/upload-artifact@v4
+      # ★ 履歴レポート（折れ線グラフ付き HTML）を生成
+      - name: Generate history report
+        run: node src/generate-history-report.js
+
+      # ★ gh-pages にコミットして push
+      - name: Commit & push history
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          name: flaky-html-report
-          path: flaky-report.html
+          commit_message: "Update flaky history for $(date +'%Y-%m-%d')"
+          branch: gh-pages
+          file_pattern: history/* history-data.json history-report.html
 
   deploy:
     needs: flaky
@@ -93,16 +89,15 @@ jobs:
       id-token: write
 
     steps:
-      - name: Download HTML report artifact
-        uses: actions/download-artifact@v4
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
         with:
-          name: flaky-html-report
-          path: public
+          ref: gh-pages
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: .
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
