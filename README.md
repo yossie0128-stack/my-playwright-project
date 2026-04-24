@@ -127,11 +127,11 @@ my-playwright-project/
     UIモード
     npx playwright test --ui
   
-Flakyテストの統計
-https://yossie0128-stack.github.io/my-playwright-project/history-report.html
-[参考画像] 
+Flakyテストの統計  
+[history-report.html](https://yossie0128-stack.github.io/my-playwright-project/history-report.html)  
+[参考画像]  
 
-![demo](./flaky_test.png)
+![Flaky Test Report](./flaky_test.png)
 
 
 📌 今後の拡張予定
