@@ -4,7 +4,7 @@
 POM設計・APIテスト・CI/CD統合・並列実行など、実務レベルの構成を10日で構築しました。
 UI/REST APIの統合テストと安定化設計を重視しています。
 
-[自動テストの動作動画]
+・自動テストの動作動画
 
 ![demo](./ezgif-1fa8e54b231b923c.gif)
 
@@ -127,10 +127,10 @@ my-playwright-project/
     UIモード
     npx playwright test --ui
   
-Flakyテストの統計
-https://yossie0128-stack.github.io/my-playwright-project/history-report.html
-[参考画像] 
-
+Flakyテストの統計  
+[history-report.html](https://yossie0128-stack.github.io/my-playwright-project/history-report.html)  
+[参考画像]  
+ 
 ![demo](./flaky_test.png)
 
 
