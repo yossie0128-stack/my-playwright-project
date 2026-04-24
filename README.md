@@ -5,7 +5,7 @@ POM設計・APIテスト・CI/CD統合・並列実行など、実務レベルの
 UI/REST APIの統合テストと安定化設計を重視しています。
 
 [自動テストの動作動画]
-./video.webm
+![demo](./ezgif-1bcf2d3076314d7e.gif)
 
 
 🎯 プロジェクトの目的
