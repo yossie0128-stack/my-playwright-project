@@ -4,7 +4,7 @@
 POM設計・APIテスト・CI/CD統合・並列実行など、実務レベルの構成を10日で構築しました。
 UI/REST APIの統合テストと安定化設計を重視しています。
 
-[自動テストの動作動画]https://github.com/yossie0128-stack/my-playwright-project/blob/main/video.webm
+[自動テストの動作動画] https://github.com/yossie0128-stack/my-playwright-project/blob/main/video.webm
 
 
 🎯 プロジェクトの目的
