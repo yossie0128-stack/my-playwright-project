@@ -121,9 +121,9 @@
   },
   {
     "title": "file download practice1",
-    "success": 0,
-    "fail": 3,
-    "flakyRate": 100
+    "success": 1,
+    "fail": 0,
+    "flakyRate": 0
   },
   {
     "title": "Playwright footer training:GetStarted",
