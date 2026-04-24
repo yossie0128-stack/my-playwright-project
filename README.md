@@ -8,8 +8,6 @@ UI/REST APIの統合テストと安定化設計を重視しています。
 https://raw.githubusercontent.com/yossie0128-stack/my-playwright-project/main/video.webm
 
 
-
-
 🎯 プロジェクトの目的
 
     Playwrightを用いたUIテスト自動化の実践
