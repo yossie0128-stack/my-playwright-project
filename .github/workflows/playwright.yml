@@ -41,6 +41,7 @@ jobs:
 
   flaky:
     needs: test
+    if: always()
     runs-on: ubuntu-latest
 
     steps:
