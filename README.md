@@ -6,7 +6,7 @@ UI/REST APIの統合テストと安定化設計を重視しています。
 
 [自動テストの動作動画]
 
-![demo](./ezgif-1bcf2d3076314d7e.gif)
+![demo](./ezgif-1fa8e54b231b923c.gif)
 
 
 🎯 プロジェクトの目的
@@ -77,6 +77,8 @@ UI/REST APIの統合テストと安定化設計を重視しています。
 
     実務のワークフローを再現
 
+    品質メトリクスに使用するためのFlakyなテストの検出
+
 🕒 10 日以内で構築した内容
 
 以下の工程を短期間で完了し、キャッチアップ能力と基盤構築力を示しています。
@@ -127,12 +129,19 @@ my-playwright-project/
   
 Flakyテストの統計
 https://yossie0128-stack.github.io/my-playwright-project/history-report.html
+[参考画像]
+![demo](./flaky_test.png)
+
 
 📌 今後の拡張予定
 
 ディレクトリ構造の整理（pages / componentsをsrc 配下へ移動）
 
+POMのセレクタの分離を進め、より運用を楽にする。
+
 fixturesの導入（過度な抽象化を避け、POMのDIは採用しない方針）
+
+品質メトリクス用のテスト失敗などの情報をSlackなどに自動通知する
 
 ~~テストランナーをLinuxへ変更（Playwright 推奨・無料枠でも高性能）~~ -> 変更を行ったら50%ほど速くなった上、iframeの処理が安定するようになった。
 
