@@ -138,7 +138,7 @@ https://yossie0128-stack.github.io/my-playwright-project/history-report.html
 
 ディレクトリ構造の整理（pages / componentsをsrc 配下へ移動）
 
-POMのセレクタの分離を進め、より運用を楽にする。
+保守性向上のためにPOMで利用するセレクタを各々のクラスのコンストラクタで定義し直し、関数ではそれを使用するようにする。
 
 fixturesの導入（過度な抽象化を避け、POMのDIは採用しない方針）
 
