@@ -1,6 +1,6 @@
 [English README](README.en.md)
 
-このプロジェクトは、Playwrightを用いたUI × APIのE2E自動テスト基盤です。
+このプロジェクトは、転職活動用に作ったPlaywrightを用いたUI × APIのE2E自動テスト基盤です。
 POM設計・APIテスト・CI/CD統合・並列実行など、実務レベルの構成を10日で構築しました。
 UI/REST APIの統合テストと安定化設計を重視しています。
 
