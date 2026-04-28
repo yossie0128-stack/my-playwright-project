@@ -40,6 +40,14 @@ jobs:
           path: result.json
           retention-days: 30
 
+      - name: Check test results
+        run: |
+          FAILURES=$(node -e "const r=require('./result.json'); const failures = typeof r.stats?.unexpected==='number' ? r.stats.unexpected : r.suites.flatMap(s=>s.specs).flatMap(sp=>sp.tests).reduce((sum,t)=>sum + t.results.filter(rr=>rr.status!=='passed').length,0); console.log(failures);")
+          if [ "$FAILURES" -gt 0 ]; then
+            echo "Tests failed with $FAILURES failures"
+            exit 1
+          fi
+
   flaky:
     needs: test
     if: always()
