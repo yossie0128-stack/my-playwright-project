@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,7 +44,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -66,13 +66,13 @@
   },
   "suites": [
     {
-      "title": "iframe-test\\IFrame.spec.ts",
-      "file": "iframe-test/IFrame.spec.ts",
+      "title": "download-test\\Download.spec.ts",
+      "file": "download-test/Download.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "iFrame practice1",
+          "title": "file download practice1",
           "ok": true,
           "tags": [],
           "tests": [
@@ -84,246 +84,25 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 10,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6499,
+                  "duration": 2791,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-04-24T07:41:26.729Z",
+                  "startTime": "2026-04-28T09:27:18.130Z",
                   "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-iFrame-practice1-chromium\\video.webm"
-                    }
-                  ]
+                  "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "1238426f8677966204d2-d61aba63dd043ae744ea",
-          "file": "iframe-test/IFrame.spec.ts",
-          "line": 65,
-          "column": 1
-        },
-        {
-          "title": "iFrame practice2",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 1,
-                  "status": "passed",
-                  "duration": 6723,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-04-24T07:41:26.729Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-iFrame-practice2-chromium\\video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "1238426f8677966204d2-ab79137effe902c01493",
-          "file": "iframe-test/IFrame.spec.ts",
-          "line": 82,
-          "column": 1
-        },
-        {
-          "title": "iFrame practice3",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "parallelIndex": 2,
-                  "status": "passed",
-                  "duration": 10656,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-04-24T07:41:26.729Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-iFrame-practice3-chromium\\video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "1238426f8677966204d2-3038d3437a036a5f7d84",
-          "file": "iframe-test/IFrame.spec.ts",
-          "line": 96,
-          "column": 1
-        },
-        {
-          "title": "tab practice4",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 5925,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-04-24T07:41:26.729Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-tab-practice4-chromium\\video-1.webm"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-tab-practice4-chromium\\video.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "1238426f8677966204d2-ed94e746b322187cdd7d",
-          "file": "iframe-test/IFrame.spec.ts",
-          "line": 144,
-          "column": 1
-        },
-        {
-          "title": "tab practice5",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "parallelIndex": 3,
-                  "status": "passed",
-                  "duration": 3533,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-04-24T07:41:33.271Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-tab-practice5-chromium\\video.webm"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-tab-practice5-chromium\\video-1.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "1238426f8677966204d2-33cbb1dbf899fec1e14a",
-          "file": "iframe-test/IFrame.spec.ts",
-          "line": 159,
-          "column": 1
-        },
-        {
-          "title": "tab practice6",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 2305,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-04-24T07:41:33.868Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-tab-practice6-chromium\\video.webm"
-                    },
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\waiva\\my-playwright-project\\test-results\\iframe-test-IFrame-tab-practice6-chromium\\video-1.webm"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "1238426f8677966204d2-99f5619012bfa534aef5",
-          "file": "iframe-test/IFrame.spec.ts",
-          "line": 176,
+          "id": "32dbb19367d443bce263-c2f21efb9151318bfade",
+          "file": "download-test/Download.spec.ts",
+          "line": 61,
           "column": 1
         }
       ]
@@ -331,9 +110,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-24T07:41:25.726Z",
-    "duration": 12404.723999999998,
-    "expected": 6,
+    "startTime": "2026-04-28T09:27:17.239Z",
+    "duration": 3787.323000000004,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -65,11 +65,11 @@ test('file download practice1', async ({ page }) => {
   const file = 'test.txt';
   const savePath =path.join('tests', 'download-test', file)
 
-  const [download] = await Promise.all([
-    page.waitForEvent('download'),
-    page.getByRole('link', { name: file, exact: true }).click()
-  ]);
+  const downloadPromise = page.waitForEvent('download');
 
+  await page.getByRole('link', { name: file, exact: true }).click();
+
+  const download = await downloadPromise;
   await download.saveAs(savePath);
 
   expect(fs.existsSync(savePath)).toBe(true);
