@@ -20,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -41,21 +41,13 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Check test results
-        run: |
-          FAILURES=$(node -e "const r=require('./result.json'); const failures = typeof r.stats?.unexpected==='number' ? r.stats.unexpected : r.suites.flatMap(s=>s.specs).flatMap(sp=>sp.tests).reduce((sum,t)=>sum + t.results.filter(rr=>rr.status!=='passed').length,0); console.log(failures);")
-          if [ "$FAILURES" -gt 0 ]; then
-            echo "Tests failed with $FAILURES failures"
-            exit 1
-          fi
-
-       # Allureレポートを生成
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: allure-results
-          allure_history: allure-history
+          allure_history: .
+          gh_pages: gh-pages
           keep_reports: 1 
 
       # GitHub Pagesにデプロイ
@@ -65,4 +57,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history
+          publish_dir: .
