@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "reporter": [
@@ -31,6 +31,10 @@
           "outputFolder": "playwright-report",
           "open": "never"
         }
+      ],
+      [
+        "C:\\Users\\waiva\\my-playwright-project\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        null
       ]
     ],
     "reportSlowTests": {
@@ -44,7 +48,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "chromium",
         "name": "chromium",
@@ -66,13 +70,13 @@
   },
   "suites": [
     {
-      "title": "download-test\\Download.spec.ts",
-      "file": "download-test/Download.spec.ts",
+      "title": "DocPage.spec.ts",
+      "file": "DocPage.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "file download practice1",
+          "title": "Playwright Document Page Verify to work install tabs",
           "ok": true,
           "tags": [],
           "tests": [
@@ -84,15 +88,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 10,
+                  "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2791,
+                  "duration": 4195,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-04-28T09:27:18.130Z",
+                  "startTime": "2026-05-01T04:10:22.645Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -100,9 +104,587 @@
               "status": "expected"
             }
           ],
-          "id": "32dbb19367d443bce263-c2f21efb9151318bfade",
-          "file": "download-test/Download.spec.ts",
-          "line": 61,
+          "id": "24ed7e8b69b8ef9b6c69-c623427b737dcb396f73",
+          "file": "DocPage.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work run tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4211,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:22.631Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-456465d1f04e3cedd855",
+          "file": "DocPage.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work report tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 4207,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:22.645Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-a3932e738962ad719614",
+          "file": "DocPage.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work test tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 4223,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:22.645Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-6627b4963109ab461fb5",
+          "file": "DocPage.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work update tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 973,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:27.115Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-443652f3636fe5c9338e",
+          "file": "DocPage.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work version tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1031,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:27.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-fa936572d2a5bb3c0092",
+          "file": "DocPage.spec.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at install sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1142,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:27.127Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-dccdb378837d45b7009f",
+          "file": "DocPage.spec.ts",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at run sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1145,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:27.131Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-e4dc8cef2e8c69b07213",
+          "file": "DocPage.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at report sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1039,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:28.098Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-5379d5bb168dbbbeea43",
+          "file": "DocPage.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at test sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1079,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:28.166Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-990e733c940b330f2e30",
+          "file": "DocPage.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at update sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1078,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:28.280Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-ae99abcd2711e96f2522",
+          "file": "DocPage.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at version sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1041,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:28.286Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-37537a0f2e87e4f00c1f",
+          "file": "DocPage.spec.ts",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document of Left side bar Verify to work copy button at agent sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1611,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:29.147Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-765489773b960e2ed5cf",
+          "file": "DocPage.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document of Left side bar Verify to work copy button at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 882,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:29.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-da8d6984e67334212402",
+          "file": "DocPage.spec.ts",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document of Left side bar Verify to work copy button at runnning tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 806,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:29.336Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-96f0f43bcc59db8bca43",
+          "file": "DocPage.spec.ts",
+          "line": 129,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document of right side bar Verify to be visible assertion link at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 750,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:29.368Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-adb9c8a3136bdc585845",
+          "file": "DocPage.spec.ts",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document of right side bar Verify assertion link to be scrollable at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:30.129Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-e260008e7774226fd007",
+          "file": "DocPage.spec.ts",
+          "line": 147,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document of right side bar Verify link count to be greater than 3  at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 669,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-01T04:10:30.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-bd77f397cd9a0410b6df",
+          "file": "DocPage.spec.ts",
+          "line": 156,
           "column": 1
         }
       ]
@@ -110,9 +692,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-28T09:27:17.239Z",
-    "duration": 3787.323000000004,
-    "expected": 1,
+    "startTime": "2026-05-01T04:10:21.455Z",
+    "duration": 9530.621999999508,
+    "expected": 18,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
