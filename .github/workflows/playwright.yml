@@ -20,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: 'npm'
 
       - name: Install dependencies
@@ -33,12 +33,13 @@ jobs:
         run: npx playwright test --project=chromium --workers=1
         continue-on-error: true
 
-      - name: Upload JSON test result
-        uses: actions/upload-artifact@v4
+      - name: Get Allure history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
         with:
-          name: playwright-json-result
-          path: result.json
-          retention-days: 30
+          ref: gh-pages
+          path: gh-pages
 
       - name: Check test results
         run: |
@@ -48,85 +49,19 @@ jobs:
             exit 1
           fi
 
-  flaky:
-    needs: test
-    if: always()
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
+       # Allureレポートを生成
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
         with:
-           ref: gh-pages
-           fetch-depth: 0   
+          allure_results: allure-results
+          allure_history: allure-history
 
-      - name: Create gh-pages branch if not exists
-        run: |
-          if ! git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
-            echo "gh-pages does not exist. Creating..."
-            git checkout --orphan gh-pages
-            git rm -rf .
-            echo "<html><body><h1>Initializing gh-pages</h1></body></html>" > index.html
-            git add index.html
-            git commit -m "Initialize gh-pages"
-            git push origin gh-pages
-          else
-            echo "gh-pages exists."
-          fi
-
-    
-      - name: Download JSON artifact
-        uses: actions/download-artifact@v4
+      # GitHub Pagesにデプロイ
+      - name: Deploy Allure Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
         with:
-          name: playwright-json-result
-          path: artifacts
-
-      - name: Install deps
-        run: npm ci
-
-      - name: Run flaky analyzer
-        run: node src/analyze-flaky.js
-
-      # ★ 履歴を保存
-      - name: Save history
-        run: |
-          DATE=$(date +'%Y-%m-%d')
-          mkdir -p history/$DATE
-          cp flaky-summary.json history/$DATE/
-        shell: bash
-
-      # ★ 履歴データをまとめる（history-data.json を生成）
-      - name: Generate history data
-        run: node src/generate-history-data.js
-
-      # ★ 履歴レポート（折れ線グラフ付き HTML）を生成
-      - name: Generate history report
-        run: node src/generate-history-report.js
-
-      # ★ gh-pages にコミットして push
-      - name: Commit & push history
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update flaky history for $(date +'%Y-%m-%d')"
-          branch: gh-pages
-          file_pattern: history/* history-data.json history-report.html
-
-  deploy:
-    needs: flaky
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-
-    steps:
-      - name: Checkout gh-pages
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
