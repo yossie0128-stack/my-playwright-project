@@ -57,7 +57,9 @@ jobs:
         run: |
           mv ./index.html ./redirect.html || true
           cp -r allure-report/* ./
-          sed -i 's|"reportUrl":"[^"]*"|"reportUrl":"https://yossie0128-stack.github.io/my-playwright-project"|' ./executor.json 
+          if [ -f ./executor.json ]; then
+            sed -i 's|"reportUrl":"[^"]*"|"reportUrl":"https://yossie0128-stack.github.io/my-playwright-project"|' ./executor.json
+          fi 
 
       # GitHub Pagesにデプロイ
       - name: Deploy Allure Report to GitHub Pages
