@@ -128,7 +128,7 @@ my-playwright-project/
     npx playwright test --ui
   
 テストの品質メトリクスとしてAllure reportを使用しています。以下がこのリポジトリのテストのものとなります。
-https://yossie0128-stack.github.io/my-playwright-project/98/index.html
+https://yossie0128-stack.github.io/my-playwright-project/index.html
 
 
 📌 今後の拡張予定
