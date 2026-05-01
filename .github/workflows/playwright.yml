@@ -56,7 +56,7 @@ jobs:
       - name: Copy report to root
         run: |
           mv ./index.html ./redirect.html || true
-          cp allure-report/index.html ./index.html 
+          cp -r allure-report/* ./ 
 
       # GitHub Pagesにデプロイ
       - name: Deploy Allure Report to GitHub Pages
