@@ -49,16 +49,10 @@ jobs:
         if: always()
         with:
           allure_results: allure-results
-          allure_history: .
+          allure_report: allure-report
+          allure_history: gh-pages
           gh_pages: gh-pages
           keep_reports: 1 
-
-      - name: Copy report to root
-        run: |
-          cp -r allure-report/* ./
-          if [ -f ./executor.json ]; then
-            sed -i 's|"reportUrl":"[^"]*"|"reportUrl":"https://yossie0128-stack.github.io/my-playwright-project"|' ./executor.json
-          fi 
 
       # GitHub Pagesにデプロイ
       - name: Deploy Allure Report to GitHub Pages
@@ -67,4 +61,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: .
+          publish_dir: gh-pages
