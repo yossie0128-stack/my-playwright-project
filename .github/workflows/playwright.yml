@@ -55,7 +55,7 @@ jobs:
 
       - name: Copy report to root
         run: |
-          chmod +w ./index.html || true
+          mv ./index.html ./redirect.html || true
           cp allure-report/index.html ./index.html 
 
       # GitHub Pagesにデプロイ
