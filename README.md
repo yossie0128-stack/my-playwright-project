@@ -127,11 +127,8 @@ my-playwright-project/
     UIモード
     npx playwright test --ui
   
-Flakyテストの統計
-https://yossie0128-stack.github.io/my-playwright-project/history-report.html
-
-[参考画像] 
-![demo](./flaky_test.png)
+テストの品質メトリクスとしてAllure reportを使用しています。以下がこのリポジトリのテストのものとなります。
+https://yossie0128-stack.github.io/my-playwright-project/98/index.html
 
 
 📌 今後の拡張予定
