@@ -20,14 +20,14 @@ jobs:
   test:
     timeout-minutes: 15 
     runs-on: ubuntu-latest
-    # 全体をコンテナ化せず、テスト実行ステップのみコンテナで動かす構成が最も安定します
+
     
     steps:
       - uses: actions/checkout@v6
 
       # 1. テスト実行とレポート生成をコンテナ内で実行
       - name: Run tests and Generate Allure in Container
-        uses: docker://://microsoft.com
+        uses: docker://://microsoft.com/playwright:v1.59.1
         env:
           CI: true
         with:
