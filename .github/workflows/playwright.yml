@@ -12,6 +12,7 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
+# 重複実行をキャンセル
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -20,30 +21,52 @@ jobs:
   test:
     timeout-minutes: 15 
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.1
+      # root権限問題を防ぐ
+      # options: --user 1001
 
-    
     steps:
       - uses: actions/checkout@v6
 
-      # 1. テスト実行とレポート生成をコンテナ内で実行
-      - name: Run tests and Generate Allure in Container
-        uses: docker://://microsoft.com/playwright:v1.59.1
-        env:
-          CI: true
+      - name: Cache node modules
+        uses: actions/cache@v5
+        id: npm-cache
         with:
-          # コンテナ内で実行するコマンドを直接記述
-          args: /bin/bash -c "npm ci && npx playwright test --project=chromium --workers=1 || true"
+          # パスを ./node_modules に明示
+          path: ./node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install dependencies
+        if: steps.npm-cache.outputs.cache-hit != 'true'
 
-      # 2. 履歴の取得（ホスト側）
+        run: npm ci --prefer-offline
+
+
+      - name: Run Playwright tests
+        run: npx playwright test --project=chromium --workers=1
+        env:
+          # CI環境であることをPlaywrightに伝える
+          CI: true
+
+      # 結果をArtifactに保存
+      - name: Upload Results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 3
+
       - name: Get Allure history
         uses: actions/checkout@v6
         if: always()
-        continue-on-error: true
         with:
           ref: gh-pages
           path: gh-pages
+        continue-on-error: true
 
-      # 3. レポート生成（ホスト側で実行することで権限問題を回避）
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
@@ -53,16 +76,10 @@ jobs:
           allure_history: gh-pages
           keep_reports: 30
 
-      # 4. コンテナが作ったファイルの権限をホストユーザーに戻す
-      - name: Fix permissions
-        if: always()
-        run: sudo chown -R $USER:$USER .
-
-      # 5. デプロイ（ホスト側）
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: allure-history
+          publish_dir: allure-history # simple-elfのアクションが生成するディレクトリ
