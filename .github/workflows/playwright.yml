@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.59.1
-      # root権限問題を防ぐ
-      # options: --user 1001
+       options: --user root
+
 
     steps:
       - uses: actions/checkout@v6
@@ -63,14 +63,20 @@ jobs:
       - name: Get Allure history
         uses: actions/checkout@v6
         if: always()
+        continue-on-error: true
         with:
           ref: gh-pages
           path: gh-pages
-        continue-on-error: true
 
-      - name: Generate Allure Report
+      # 追加：初回実行時にフォルダが存在しない場合、空のフォルダを作成してエラーを防ぐ
+      - name: Ensure history directory exists
+        if: always()
+        run: mkdir -p gh-pages
+
+       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
+        id: allure-report
         with:
           allure_results: allure-results
           allure_report: allure-report
