@@ -1,4 +1,4 @@
-name: Playwright Tests + Flaky History
+name: Playwright E2E & Report Deployment
 
 permissions:
   contents: write
@@ -35,6 +35,13 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --project=chromium --workers=2
 #        continue-on-error: true
+
+      - uses: actions/upload-artifact@v7
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
       - name: Check allure results
         run: echo "Allure results:" && ls -la allure-results/ || echo "No allure-results directory"
