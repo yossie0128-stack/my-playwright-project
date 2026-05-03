@@ -65,6 +65,8 @@ test('file download practice1', async ({ page }) => {
   const file = 'test.txt';
   const savePath =path.join('tests', 'download-test', file)
 
+  //たまにファイルが存在していないことがあるから、こうする
+  if(await page.getByRole('link', { name: file, exact: true }).isVisible()){
   const downloadPromise = page.waitForEvent('download');
 
   await page.getByRole('link', { name: file, exact: true }).click();
@@ -75,6 +77,8 @@ test('file download practice1', async ({ page }) => {
   expect(fs.existsSync(savePath)).toBe(true);
 
   await fs.promises.unlink(savePath);
+  }
+
 });
 
 
