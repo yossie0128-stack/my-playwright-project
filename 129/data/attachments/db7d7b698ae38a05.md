@@ -1,0 +1,139 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: download-test/Download.spec.ts >> file download practice1
+- Location: tests/download-test/Download.spec.ts:62:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForEvent: Test timeout of 30000ms exceeded.
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - link "Fork me on GitHub":
+      - /url: https://github.com/tourdedave/the-internet
+      - img "Fork me on GitHub" [ref=e5] [cursor=pointer]
+    - generic [ref=e7]:
+      - heading "File Downloader" [level=3] [ref=e8]
+      - link "some-file.txt" [ref=e9] [cursor=pointer]:
+        - /url: download/some-file.txt
+      - link "random_data.txt" [ref=e10] [cursor=pointer]:
+        - /url: download/random_data.txt
+      - link "dummy.txt" [ref=e11] [cursor=pointer]:
+        - /url: download/dummy.txt
+      - link "chromedriver.exe" [ref=e12] [cursor=pointer]:
+        - /url: download/chromedriver.exe
+      - link "sample3.pdf" [ref=e13] [cursor=pointer]:
+        - /url: download/sample3.pdf
+  - generic [ref=e15]:
+    - separator [ref=e16]
+    - generic [ref=e17]:
+      - text: Powered by
+      - link "Elemental Selenium" [ref=e18] [cursor=pointer]:
+        - /url: http://elementalselenium.com/
+```
+
+# Test source
+
+```ts
+  1  | import {test,  expect } from '@playwright/test';
+  2  | import path from 'path';
+  3  | import fs from 'fs';
+  4  | 
+  5  | /*
+  6  | 練習サイト 1：ファイルアップロード
+  7  | https://www.file.io/
+  8  | （ファイルをアップロードすると URL が返ってくるサービス）
+  9  | または
+  10 |  (the-internet.herokuapp.com in Bing)
+  11 | （Playwright の教材としてよく使われる）
+  12 | 
+  13 | 🔗 練習サイト 2：ファイルダウンロード
+  14 |  (the-internet.herokuapp.com in Bing)
+  15 | （クリックするとファイルが即ダウンロードされる）
+  16 | 
+  17 | 🟩 問題 1：ファイルアップロード（setInputFiles）
+  18 | 🎯 目的
+  19 |  を使ってファイルをアップロードし、アップロード結果を検証する。
+  20 | 📝 課題内容
+  21 | 以下のサイトを開く：
+  22 | 👉  (the-internet.herokuapp.com in Bing)
+  23 | 1. 	ページを開く
+  24 | 2. 	 に対して  を使い、任意のファイル（例：sample.txt）をアップロード
+  25 | 3. 	「Upload」ボタンをクリック
+  26 | 4. 	アップロード完了ページで
+  27 | "File Uploaded!"
+  28 | が表示されていることを確認
+  29 | 5. 	アップロードされたファイル名が正しく表示されていることを検証
+  30 | 
+  31 | 🟦 問題 2：ファイルダウンロード（page.waitForEvent('download')）
+  32 | 🎯 目的
+  33 |  を使って、ダウンロード完了を正しく待ち受ける。
+  34 | 📝 課題内容
+  35 | 以下のサイトを開く：
+  36 | 👉  (the-internet.herokuapp.com in Bing)
+  37 | 1. 	ページを開く
+  38 | 2. 	 を使ってダウンロードイベントを待機
+  39 | 3. 	任意のファイル（例：some-file.txt）をクリック
+  40 | 4. 	ダウンロードされたファイル名を取得
+  41 | 5. 	任意のパスに保存する（）
+  42 | 6. 	保存されたファイルが存在することを確認する（Node.js の fs を使う）
+  43 | 
+  44 | */
+  45 | 
+  46 | 
+  47 | test('file upload practice1', async ({ page }) => {
+  48 |   await page.goto('https://the-internet.herokuapp.com/upload');
+  49 | 
+  50 |   
+  51 |   const file = 'dummy.txt';
+  52 |   const filePath = path.join('tests','download-test', file);
+  53 | 
+  54 |   await page.setInputFiles('#file-upload', filePath);
+  55 | 
+  56 |   await page.getByRole('button', { name: 'Upload' }).click();
+  57 | 
+  58 |   await expect(page.getByRole('heading', { name: 'File Uploaded!' })).toBeVisible();
+  59 |   await expect(page.locator('#uploaded-files')).toHaveText('dummy.txt');
+  60 | });
+  61 | 
+  62 | test('file download practice1', async ({ page }) => {
+  63 |   await page.goto('https://the-internet.herokuapp.com/download');
+  64 | 
+  65 |   const file = 'test.txt';
+  66 |   const savePath =path.join('tests', 'download-test', file)
+  67 | 
+> 68 |   const downloadPromise = page.waitForEvent('download');
+     |                                ^ Error: page.waitForEvent: Test timeout of 30000ms exceeded.
+  69 | 
+  70 |   await page.getByRole('link', { name: file, exact: true }).click();
+  71 | 
+  72 |   const download = await downloadPromise;
+  73 |   await download.saveAs(savePath);
+  74 | 
+  75 |   expect(fs.existsSync(savePath)).toBe(true);
+  76 | 
+  77 |   await fs.promises.unlink(savePath);
+  78 | });
+  79 | 
+  80 | 
+  81 | 
+  82 | 
+```
