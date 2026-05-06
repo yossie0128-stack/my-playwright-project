@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "chromium",
         "name": "chromium",
@@ -72,11 +72,707 @@
   },
   "suites": [
     {
+      "title": "api-test\\Api.spec.ts",
+      "file": "api-test/Api.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "API mocking practice",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4045,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:04.277Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c14869a51f6798062ea9-e3efb0f31424ebd78437",
+          "file": "api-test/Api.spec.ts",
+          "line": 48,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "DocPage.spec.ts",
+      "file": "DocPage.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Playwright Document Page Verify to work install tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1134,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:04.293Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-c623427b737dcb396f73",
+          "file": "DocPage.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work run tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1117,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:04.293Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-456465d1f04e3cedd855",
+          "file": "DocPage.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work report tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:04.293Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-a3932e738962ad719614",
+          "file": "DocPage.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work test tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 943,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:05.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-6627b4963109ab461fb5",
+          "file": "DocPage.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work update tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1003,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:05.533Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-443652f3636fe5c9338e",
+          "file": "DocPage.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work version tabs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1136,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:05.533Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-fa936572d2a5bb3c0092",
+          "file": "DocPage.spec.ts",
+          "line": 57,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at install sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 941,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:06.465Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-dccdb378837d45b7009f",
+          "file": "DocPage.spec.ts",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at run sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1149,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:06.546Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-e4dc8cef2e8c69b07213",
+          "file": "DocPage.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at report sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1026,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:06.681Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-5379d5bb168dbbbeea43",
+          "file": "DocPage.spec.ts",
+          "line": 87,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at test sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 957,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:07.420Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-990e733c940b330f2e30",
+          "file": "DocPage.spec.ts",
+          "line": 97,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at update sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1039,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:07.704Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-ae99abcd2711e96f2522",
+          "file": "DocPage.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document Page Verify to work copy button at version sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1030,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:07.716Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-37537a0f2e87e4f00c1f",
+          "file": "DocPage.spec.ts",
+          "line": 117,
+          "column": 1
+        },
+        {
+          "title": "Playwright Document of Left side bar Verify to work copy button at agent sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1549,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:08.388Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-765489773b960e2ed5cf",
+          "file": "DocPage.spec.ts",
+          "line": 127,
+          "column": 3
+        },
+        {
+          "title": "Playwright Document of Left side bar Verify to work copy button at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:08.454Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-da8d6984e67334212402",
+          "file": "DocPage.spec.ts",
+          "line": 137,
+          "column": 3
+        },
+        {
+          "title": "Playwright Document of Left side bar Verify to work copy button at runnning tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1021,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:08.754Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-96f0f43bcc59db8bca43",
+          "file": "DocPage.spec.ts",
+          "line": 148,
+          "column": 3
+        },
+        {
+          "title": "Playwright Document of right side bar Verify to be visible assertion link at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 930,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:08.757Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-adb9c8a3136bdc585845",
+          "file": "DocPage.spec.ts",
+          "line": 158,
+          "column": 3
+        },
+        {
+          "title": "Playwright Document of right side bar Verify assertion link to be scrollable at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 894,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:09.693Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-e260008e7774226fd007",
+          "file": "DocPage.spec.ts",
+          "line": 168,
+          "column": 3
+        },
+        {
+          "title": "Playwright Document of right side bar Verify link count to be greater than 3  at writing tests sec",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 779,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:09.699Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "24ed7e8b69b8ef9b6c69-bd77f397cd9a0410b6df",
+          "file": "DocPage.spec.ts",
+          "line": 178,
+          "column": 3
+        }
+      ]
+    },
+    {
       "title": "download-test\\Download.spec.ts",
       "file": "download-test/Download.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
+        {
+          "title": "file upload practice1",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 5216,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:09.809Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "32dbb19367d443bce263-09dd9645608160c42f6c",
+          "file": "download-test/Download.spec.ts",
+          "line": 47,
+          "column": 1
+        },
         {
           "title": "file download practice1",
           "ok": true,
@@ -90,15 +786,15 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
-                  "parallelIndex": 0,
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
                   "status": "passed",
-                  "duration": 5512,
+                  "duration": 2671,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-03T03:53:33.295Z",
+                  "startTime": "2026-05-05T06:02:09.980Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -112,13 +808,717 @@
           "column": 1
         }
       ]
+    },
+    {
+      "title": "Footer.spec.ts",
+      "file": "Footer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Playwright footer training:GetStarted",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 596,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:10.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e7029f0220007e24347-f5de20c408cad8657102",
+          "file": "Footer.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Playwright footer training:LearnVideo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 692,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:10.620Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e7029f0220007e24347-d0582b46fbc5e8cd44ff",
+          "file": "Footer.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "Playwright footer training:FeatureVideo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 520,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:11.114Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e7029f0220007e24347-7e0d9ae7790862b0eeb1",
+          "file": "Footer.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "Playwright footer training:Ambassadors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 529,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:11.318Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e7029f0220007e24347-079f592dd9815d6b2797",
+          "file": "Footer.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "Playwright footer training:isOuterLinks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:11.642Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e7029f0220007e24347-af4e6772d906b1be1553",
+          "file": "Footer.spec.ts",
+          "line": 39,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "Header.spec.ts",
+      "file": "Header.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Playwright header training:Logo",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 635,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:11.879Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-fb2f0eafe0ccdb4cf90b",
+          "file": "Header.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "Playwright header training:Docs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 663,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:12.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-d17c6a9b968e68fdbd9e",
+          "file": "Header.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "Playwright header training:API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 627,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:12.523Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-bc25eb0b4d86c2830adc",
+          "file": "Header.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "Playwright header training:Hover menu",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1258,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:12.691Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-debc6df96234d582d24c",
+          "file": "Header.spec.ts",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "Playwright header training:Hover menu2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1084,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:12.974Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-90e4b9c8269770b06ee9",
+          "file": "Header.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "Playwright header training:Hover menu3",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1283,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:13.158Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-d3f529195c8c3a6cb201",
+          "file": "Header.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "Playwright header training:OuterLink",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 553,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:13.957Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-f663436c00be6696af80",
+          "file": "Header.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "Playwright header training",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 920,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:14.066Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-8ba4fc0d044fe2947ba5",
+          "file": "Header.spec.ts",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "Playwright header search button",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1155,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:14.449Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b8ee2908b0081d8d3eb-380be13396c94d28667e",
+          "file": "Header.spec.ts",
+          "line": 66,
+          "column": 2
+        }
+      ]
+    },
+    {
+      "title": "iframe-test\\IFrame.spec.ts",
+      "file": "iframe-test/IFrame.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "iFrame practice1",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2399,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:14.544Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1238426f8677966204d2-d61aba63dd043ae744ea",
+          "file": "iframe-test/IFrame.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "iFrame practice2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 3269,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:15.027Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1238426f8677966204d2-ab79137effe902c01493",
+          "file": "iframe-test/IFrame.spec.ts",
+          "line": 91,
+          "column": 1
+        },
+        {
+          "title": "iFrame practice3",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 6695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:15.044Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1238426f8677966204d2-3038d3437a036a5f7d84",
+          "file": "iframe-test/IFrame.spec.ts",
+          "line": 104,
+          "column": 1
+        },
+        {
+          "title": "tab practice4",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3606,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:15.619Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1238426f8677966204d2-ed94e746b322187cdd7d",
+          "file": "iframe-test/IFrame.spec.ts",
+          "line": 133,
+          "column": 1
+        },
+        {
+          "title": "tab practice5",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 3524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:16.951Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1238426f8677966204d2-33cbb1dbf899fec1e14a",
+          "file": "iframe-test/IFrame.spec.ts",
+          "line": 147,
+          "column": 1
+        },
+        {
+          "title": "tab practice6",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2530,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-05T06:02:18.306Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1238426f8677966204d2-99f5619012bfa534aef5",
+          "file": "iframe-test/IFrame.spec.ts",
+          "line": 171,
+          "column": 1
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-03T03:53:32.374Z",
-    "duration": 6966.098999999987,
-    "expected": 1,
+    "startTime": "2026-05-05T06:02:03.077Z",
+    "duration": 18778.429999999993,
+    "expected": 41,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
