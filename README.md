@@ -19,7 +19,7 @@ UI/REST APIの統合テストと安定化設計を重視しています。
 
     Page Object Model（POM）によるテスト構造化
 
-    Flaktを抑えるための安定化設計
+    Flakyを抑えるための安定化設計
 
     並列実行・shard による高速化
 
