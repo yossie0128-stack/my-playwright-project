@@ -142,6 +142,8 @@ https://yossie0128-stack.github.io/my-playwright-project/index.html
 
 保守性向上のためにPOMで利用するセレクタを各々のクラスのコンストラクタで定義し直し、関数ではそれを使用するようにする。
 
+テストの内容によってPR時に実行するか、nightly,releaseで実行するかを分けて運用する。
+
 fixturesの導入（過度な抽象化を避け、POMのDIは採用しない方針）
 
 品質メトリクス用のテスト失敗などの情報をSlackなどに自動通知する
