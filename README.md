@@ -2,80 +2,280 @@
 
 ## 概要
 
-このプロジェクトは、転職活動向けに構築したPlaywrightベースのテスト自動化基盤です。
+このプロジェクトは、転職活動向けに構築した Playwright ベースのテスト自動化基盤です。
 
-私は過去に品質保証業務やテスト自動化に携わった経験があり、SET（Software Engineer in Test）領域への復帰を目指して本プロジェクトを作成しました。
+私は過去に品質保証・テスト業務に携わった経験があり、現在は SET（Software Engineer in Test）領域への復帰を目指しています。
 
-単なるUIテストのサンプルではなく、
+本プロジェクトでは単なる UI テストの実装ではなく、
 
-- UIテスト
-- APIテスト
+- UI テスト
+- API テスト
 - CI/CD
-- テストレポート
+- Test Reporting
 - Flaky Test対策
 - 並列実行
 
-までを含めた、実務で利用される品質保証基盤を意識して構築しています。
+までを含めた、実務で運用可能な品質保証基盤の構築を目的としています。
 
 ---
 
-## このプロジェクトで証明したいこと
+## 私の品質保証に対する考え方
 
-このリポジトリの目的は、Playwrightの学習履歴を示すことではありません。
+私はテストを
 
-品質保証活動において重要な、
+> 「不具合を見つけるための活動」
 
-- 保守しやすいテストコードの設計
-- 品質を維持しながら開発速度を落とさない仕組み作り
-- CI/CDへの継続的な統合
-- Flaky Testの削減
+だけではなく、
+
+> 「開発チームが安心して高速にリリースを継続するための仕組み」
+
+だと考えています。
+
+品質と開発速度は対立するものではなく、
+適切な自動化と継続的な品質保証基盤によって両立できると考えています。
+
+そのため本プロジェクトでは、
+
+- 保守しやすいテストコード
+- 安定したCI/CD
+- Flaky Test削減
 - 品質メトリクスの可視化
 
-といった課題に取り組めることを示すために作成しました。
+を重視しました。
 
 ---
 
-## Playwrightを選択した理由
+# このプロジェクトで証明したいこと
 
-自動テストフレームワークとしてPlaywrightを選択した理由は以下の通りです。
+このリポジトリの目的は、
 
-### 1. UI・APIテストを同一フレームワーク内で実装できる
+「Playwrightを学習したこと」
 
-品質保証ではUIだけでなくAPIレベルでの検証も重要です。
+ではありません。
 
-PlaywrightはUIテストとAPIテストを同じフレームワークで管理できるため、保守性の高い統合テスト基盤を構築できます。
+以下を実践できることを示すために作成しました。
 
-### 2. Selenium・Cypressとの比較
+- テスト自動化基盤の構築
+- API/UI統合テスト設計
+- Page Object Model設計
+- GitHub Actionsを用いたCI/CD構築
+- テスト実行時間短縮
+- Flaky Testの検出と改善
+- 品質メトリクス基盤の整備
 
-候補としてSeleniumやCypressも検討しました。
+---
 
-比較した結果、
+# Playwrightを選択した理由
 
-- 自動待機（Auto Wait）
-- API Testing
-- 並列実行
+## SETを目指す上で必要なスキルだったため
+
+過去に品質保証業務へ携わった経験があり、
+テスト自動化・品質基盤構築を担当するSET領域へ再挑戦するために学習を開始しました。
+
+現在利用されている主要な自動テストツールを比較した結果、
+Playwrightを採用しました。
+
+---
+
+## Selenium・Cypressとの比較
+
+以下の観点を評価しました。
+
+- Auto Waitによる安定性
+- UIテストとAPIテストの統合
 - TypeScriptとの親和性
+- 並列実行機能
+- クロスブラウザ対応
 
-といった点を評価し、Playwrightを選択しました。
+SET業務において必要となる機能を広くカバーできるため、
+Playwrightを選択しています。
 
-### 3. 長期運用を見据えた選定
+---
+
+## 長期運用を見据えた技術選定
 
 PlaywrightはMITライセンスで公開されています。
 
-特定ベンダーへの依存度が比較的低く、仮にMicrosoftの開発体制が変化した場合でも、コミュニティ主導で継続できる可能性が高いと考えています。
-
-そのため、長期的な学習投資先として適切であると判断しました。
+仮に開発主体が変化した場合でも、
+コミュニティやフォークによって継続利用できる可能性が高く、
+長期的な学習投資先としても魅力があると考えました。
 
 ---
 
-## このプロジェクトで実装した内容
+# 実装内容
 
-- UI Test Automation
-- API Testing
-- UI × API Integration Testing
-- Page Object Model
-- GitHub Actions CI/CD
-- Allure Report
-- Parallel Execution
-- Flaky Test Detection
-- Test Artifact Management
+## UI Test Automation
+
+- Playwright
+- Cross Browser Testing
+- iframe対応
+- Download Test
+- Screenshot取得
+- Video保存
+
+---
+
+## API Testing
+
+Playwright Request API を利用し、
+
+- GET
+- POST
+- PUT
+- DELETE
+
+を実装しています。
+
+レスポンスコードだけでなく、
+レスポンスボディの検証も実施しています。
+
+---
+
+## UI × API Integration Testing
+
+UIとAPIを組み合わせた統合シナリオを実装しています。
+
+E2Eテストだけに依存せず、
+APIを活用してテストを効率化する設計を意識しました。
+
+---
+
+## Page Object Model
+
+POMを採用しています。
+
+### 目的
+
+- 保守性向上
+- 責務分離
+- 可読性向上
+
+---
+
+## GitHub Actions CI/CD
+
+以下のタイミングで自動実行されます。
+
+- Push
+- Pull Request
+
+また、
+
+- テスト結果
+- スクリーンショット
+- 動画
+- レポート
+
+を成果物として保存しています。
+
+---
+
+## Allure Report
+
+品質メトリクスの可視化を目的として
+Allure Reportを利用しています。
+
+Report:
+
+https://yossie0128-stack.github.io/my-playwright-project/index.html
+
+---
+
+# Flaky Test対策
+
+E2Eテストにおいて最も重視したテーマの一つが
+Flaky Testの削減です。
+
+対策として以下を実施しました。
+
+- 適切なLocator設計
+- frameLocator利用
+- Auto Wait活用
+- 明示的Waitの最小化
+- Retry戦略
+- GitHub Actions上での継続検証
+
+テストコードを書くことだけではなく、
+
+「継続的に信頼できるテストを維持すること」
+
+を意識しています。
+
+---
+
+# 苦労した点
+
+最も苦労したのは
+
+## CI環境とローカル環境の差異
+
+です。
+
+ローカルでは成功するテストが
+GitHub Actionsでは失敗するケースがありました。
+
+原因調査や改善を行う過程で、
+
+- GitHub Actions
+- Linux Runner
+- Playwright実行環境
+- Flaky分析
+
+について理解を深めることができました。
+
+---
+
+# ディレクトリ構成
+
+```text
+my-playwright-project/
+├── playwright.config.ts
+├── package.json
+├── tests/
+│   ├── ui/
+│   └── api/
+├── pages/
+│   ├── LoginPage.ts
+│   └── DashboardPage.ts
+└── .github/
+    └── workflows/
+        └── playwright.yml
+```
+
+---
+
+# 今後改善したいこと
+
+- Fixtures導入
+- テストデータ管理改善
+- Mock Service Worker導入
+- Pact導入検討
+- Slack通知
+- サービス仮想化
+- 品質メトリクス強化
+
+---
+
+# 求めているポジション
+
+私は以下の領域に興味があります。
+
+- QA Engineer
+- SET (Software Engineer in Test)
+- Test Automation Engineer
+- Quality Engineering
+
+特に
+
+- テスト自動化
+- 品質保証基盤構築
+- CI/CD
+- 開発者生産性向上
+
+に強い関心があります。
+
+品質を守るだけではなく、
+
+「品質を維持しながらリリース速度を向上させる」
+
+仕組み作りに貢献したいと考えています。
