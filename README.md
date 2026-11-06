@@ -1,169 +1,81 @@
-[English README](README.en.md)
+# Playwright Test Automation Framework
 
-このプロジェクトは、転職活動用に作ったPlaywrightを用いたUI × APIのE2E自動テスト基盤です。
-POM設計・APIテスト・CI/CD統合・並列実行など、実務レベルの構成を10日で構築しました。
-UI/REST APIの統合テストと安定化設計を重視しています。
+## 概要
 
-・自動テストの動作動画
+このプロジェクトは、転職活動向けに構築したPlaywrightベースのテスト自動化基盤です。
 
-![demo](./ezgif-1fa8e54b231b923c.gif)
+私は過去に品質保証業務やテスト自動化に携わった経験があり、SET（Software Engineer in Test）領域への復帰を目指して本プロジェクトを作成しました。
 
+単なるUIテストのサンプルではなく、
 
-🎯 プロジェクトの目的
+- UIテスト
+- APIテスト
+- CI/CD
+- テストレポート
+- Flaky Test対策
+- 並列実行
 
-    Playwrightを用いたUIテスト自動化の実践
+までを含めた、実務で利用される品質保証基盤を意識して構築しています。
 
-    REST APIを対象としたAPIテストの導入
+---
 
-    UIとAPIを組み合わせた統合テストの構築
+## このプロジェクトで証明したいこと
 
-    Page Object Model（POM）によるテスト構造化
+このリポジトリの目的は、Playwrightの学習履歴を示すことではありません。
 
-    Flakyを抑えるための安定化設計
+品質保証活動において重要な、
 
-    並列実行・shard による高速化
+- 保守しやすいテストコードの設計
+- 品質を維持しながら開発速度を落とさない仕組み作り
+- CI/CDへの継続的な統合
+- Flaky Testの削減
+- 品質メトリクスの可視化
 
-    GitHub Actionsを用いたCI/CD パイプライン構築
+といった課題に取り組めることを示すために作成しました。
 
-    短期間で実務レベルの自動化基盤を構築できるスキルの証明
+---
 
-私のSETとしての哲学：テストは「不具合を見つけるためのもの」以上に、「開発者の生産性を最大化するための基盤」であるべきだと考えています。自動テストによって「壊れていないこと」が常に保証されることで、開発チームは自信を持って高速にリリースを繰り返すことができます。私はそのための安定した、高速なパイプラインを構築することに注力しています。
+## Playwrightを選択した理由
 
-🚀 特徴（Features）
-■ UI × API の統合テスト
+自動テストフレームワークとしてPlaywrightを選択した理由は以下の通りです。
 
-    Playwrightのrequest API を使用
+### 1. UI・APIテストを同一フレームワーク内で実装できる
 
-    GET  POST / PUT / DELETE を網羅
+品質保証ではUIだけでなくAPIレベルでの検証も重要です。
 
-    ステータスコード・レスポンスボディの検証
+PlaywrightはUIテストとAPIテストを同じフレームワークで管理できるため、保守性の高い統合テスト基盤を構築できます。
 
-    UIとAPI を組み合わせたシナリオテストに対応
+### 2. Selenium・Cypressとの比較
 
-■ Page Object Model（POM）による拡張性
+候補としてSeleniumやCypressも検討しました。
 
-    ページ単位で責務を分離
+比較した結果、
 
-    テストコードの可読性・保守性を向上
+- 自動待機（Auto Wait）
+- API Testing
+- 並列実行
+- TypeScriptとの親和性
 
-    実務で一般的な構成を採用
+といった点を評価し、Playwrightを選択しました。
 
-■ Flakyを抑える安定化設計
+### 3. 長期運用を見据えた選定
 
-    適切なロケータ選定
+PlaywrightはMITライセンスで公開されています。
 
-    iframe（frameLocator）対応
+特定ベンダーへの依存度が比較的低く、仮にMicrosoftの開発体制が変化した場合でも、コミュニティ主導で継続できる可能性が高いと考えています。
 
-    遅延読み込みへの対策
+そのため、長期的な学習投資先として適切であると判断しました。
 
-    明示的な待機の最小化
+---
 
-    CI環境を考慮したリトライ戦略
+## このプロジェクトで実装した内容
 
-    個人環境の CIランナーでは一部 Flaky が発生するが、実務では高性能ランナーを選択することで解消可能
-
-       
-■ 並列実行・shard による高速化
-
-    Playwrightの並列実行機能を活用
-
-    CI上でも高速に動作するよう最適化
-
-■ GitHub Actions によるCI/CD統合
-
-    push/PR 時に自動テスト実行
-
-    UI/API テストを並列で実行
-
-    動画・スクリーンショットの保存
-
-    実務のワークフローを再現
-
-    品質メトリクスに使用するためのFlakyなテストの検出
-    
-    ブラウザのキャッシュ化(毎回インストールする手法や、playwrightのdockerコンテナを利用するより高速化が図れた)
-
-🕒 10 日以内で構築した内容
-
-以下の工程を短期間で完了し、キャッチアップ能力と基盤構築力を示しています。
-
-    Playwright セットアップ
-
-    UIテスト実装
-
-    APIテスト実装
-
-    POM設計
-
-    Flaky対策
-
-    並列実行設定
-
-    GitHub Actions によるCI/CDパイプライン構築
-
-📁 ディレクトリ構成（抜粋）
-コード
-
-my-playwright-project/
-├── playwright.config.ts
-├── package.json
-├── tests/
-│   ├── ui/
-│   ├── api/
-├── pages/
-│   ├── LoginPage.ts
-│   ├── DashboardPage.ts
-└── .github/
-    └── workflows/
-        └── playwright.yml
-
-🧪 実行方法
-
-    依存関係インストール
-    npm install
-
-    UIテスト
-    npx playwright test tests/ui
-
-    APIテスト
-    npx playwright test tests/api
-
-    UIモード
-    npx playwright test --ui
-  
-テストの品質メトリクスとしてAllure reportを使用しています。以下がこのリポジトリのテストのものとなります。
-https://yossie0128-stack.github.io/my-playwright-project/index.html
-
-
-📌 今後の拡張予定
-
-ディレクトリ構造の整理（pages / componentsをsrc 配下へ移動）
-    複数回テストを行う可能性があるUIコンポーネントを/componentsに用意しておく。
-
-保守性向上のためにPOMで利用するセレクタを各々のクラスのコンストラクタで定義し直し、関数ではそれを使用するようにする。
-
-テストの内容によってPR時に実行するか、nightly,releaseで実行するかを分けて運用する。
-
-fixturesの導入（過度な抽象化を避け、POMのDIは採用しない方針）
-
-品質メトリクス用のテスト失敗などの情報をSlackなどに自動通知する
-
-~~テストランナーをLinuxへ変更（Playwright 推奨・無料枠でも高性能）~~ -> 変更を行ったら50%ほど速くなった上、iframeの処理が安定するようになった。
-ただ、それでもローカルのテスト実行と比べて3-4倍弱遅い。
-
-APIモックサーバーとの統合
-    UIテストがFlakyになる最大の要因は外部依存（DBやAPI）にあるため、Mock service workerかPactを導入を検討している。
-    (マイクロサービスが無い状態でもテストやフロントの開発が可能になるため。)
-
-テストデータ管理の改善(テストがFlakyになる主要な原因の一つなため。)
-
-UI × API の複雑な統合シナリオ追加
-    テスト高速化や安定性のためにログインやSaasなどではCRUD操作n等はAPIを直接叩いたほうがいい。
-
-
-個人では難しいが・・・
-    テスト管理ツールの導入 
-    負荷テストとの連携 
-    セキュリティテストの導入
-
-
+- UI Test Automation
+- API Testing
+- UI × API Integration Testing
+- Page Object Model
+- GitHub Actions CI/CD
+- Allure Report
+- Parallel Execution
+- Flaky Test Detection
+- Test Artifact Management
