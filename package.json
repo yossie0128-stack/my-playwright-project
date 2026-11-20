@@ -9,7 +9,7 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
+    "@playwright/test": "^1.65.1",
     "@types/node": "^25.0.3",
     "allure-playwright": "^3.7.1",
     "eslint": "^9.39.2",
