@@ -1,0 +1,589 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: DocPage.spec.ts >> Playwright Document of Left side bar Verify to work copy button at agent sec
+- Location: tests/DocPage.spec.ts:127:3
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByText('VS CodeClaude CodeOpenCodenpx').getByRole('tab', { name: 'VS Code', exact: true })
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link "Playwright logo Playwright" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Playwright logo" [ref=e9]
+          - generic [ref=e10]: Playwright
+        - link "Docs" [ref=e11] [cursor=pointer]:
+          - /url: /docs/intro
+        - link "MCP" [ref=e12] [cursor=pointer]:
+          - /url: /mcp/introduction
+        - link "CLI" [ref=e13] [cursor=pointer]:
+          - /url: /agent-cli/introduction
+        - link "API" [ref=e14] [cursor=pointer]:
+          - /url: /docs/api/class-playwright
+        - button "Node.js" [ref=e16] [cursor=pointer]
+      - generic [ref=e17]:
+        - link "GitHub repository" [ref=e18] [cursor=pointer]:
+          - /url: https://github.com/microsoft/playwright
+        - link "Discord server" [ref=e19] [cursor=pointer]:
+          - /url: https://aka.ms/playwright/discord
+        - button "Switch between dark and light mode (currently system mode)" [ref=e21] [cursor=pointer]
+        - button "Search (Control+k)" [ref=e25] [cursor=pointer]:
+          - generic [ref=e26]: Search
+          - generic [ref=e31]:
+            - generic [ref=e32]: Ctrl
+            - generic [ref=e33]: K
+  - generic [ref=e36]:
+    - complementary [ref=e37]:
+      - navigation "Docs sidebar" [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - button "Getting Started" [expanded] [ref=e44] [cursor=pointer]
+            - list [ref=e46]:
+              - listitem [ref=e47]:
+                - link "Installation" [ref=e48] [cursor=pointer]:
+                  - /url: /docs/intro
+              - listitem [ref=e50]:
+                - link "Writing tests" [ref=e51] [cursor=pointer]:
+                  - /url: /docs/writing-tests
+              - listitem [ref=e53]:
+                - link "Generating tests" [ref=e54] [cursor=pointer]:
+                  - /url: /docs/codegen-intro
+              - listitem [ref=e56]:
+                - link "Running and debugging tests" [ref=e57] [cursor=pointer]:
+                  - /url: /docs/running-tests
+              - listitem [ref=e59]:
+                - link "Trace viewer" [ref=e60] [cursor=pointer]:
+                  - /url: /docs/trace-viewer-intro
+              - listitem [ref=e62]:
+                - link "Setting up CI" [ref=e63] [cursor=pointer]:
+                  - /url: /docs/ci-intro
+              - listitem [ref=e65]:
+                - link "VS Code" [ref=e66] [cursor=pointer]:
+                  - /url: /docs/getting-started-vscode
+          - listitem [ref=e68]:
+            - link "Release notes" [ref=e69] [cursor=pointer]:
+              - /url: /docs/release-notes
+          - listitem [ref=e71]:
+            - link "Canary releases" [ref=e72] [cursor=pointer]:
+              - /url: /docs/canary-releases
+          - listitem [ref=e74]:
+            - button "Playwright Test" [ref=e76] [cursor=pointer]
+          - listitem [ref=e78]:
+            - button "Guides" [expanded] [ref=e80] [cursor=pointer]
+            - list [ref=e82]:
+              - listitem [ref=e83]:
+                - link "Library" [ref=e84] [cursor=pointer]:
+                  - /url: /docs/library
+              - listitem [ref=e86]:
+                - link "Accessibility testing" [ref=e87] [cursor=pointer]:
+                  - /url: /docs/accessibility-testing
+              - listitem [ref=e89]:
+                - link "Actions" [ref=e90] [cursor=pointer]:
+                  - /url: /docs/input
+              - listitem [ref=e92]:
+                - link "Assertions" [ref=e93] [cursor=pointer]:
+                  - /url: /docs/test-assertions
+              - listitem [ref=e95]:
+                - link "API testing" [ref=e96] [cursor=pointer]:
+                  - /url: /docs/api-testing
+              - listitem [ref=e98]:
+                - link "Authentication" [ref=e99] [cursor=pointer]:
+                  - /url: /docs/auth
+              - listitem [ref=e101]:
+                - link "Auto-waiting" [ref=e102] [cursor=pointer]:
+                  - /url: /docs/actionability
+              - listitem [ref=e104]:
+                - link "Best Practices" [ref=e105] [cursor=pointer]:
+                  - /url: /docs/best-practices
+              - listitem [ref=e107]:
+                - link "Browsers" [ref=e108] [cursor=pointer]:
+                  - /url: /docs/browsers
+              - listitem [ref=e110]:
+                - link "Chrome extensions" [ref=e111] [cursor=pointer]:
+                  - /url: /docs/chrome-extensions
+              - listitem [ref=e113]:
+                - link "Clock" [ref=e114] [cursor=pointer]:
+                  - /url: /docs/clock
+              - listitem [ref=e116]:
+                - link "Component testing" [ref=e117] [cursor=pointer]:
+                  - /url: /docs/test-components
+              - listitem [ref=e119]:
+                - link "Debugging Tests" [ref=e120] [cursor=pointer]:
+                  - /url: /docs/debug
+              - listitem [ref=e122]:
+                - link "Dialogs" [ref=e123] [cursor=pointer]:
+                  - /url: /docs/dialogs
+              - listitem [ref=e125]:
+                - link "Downloads" [ref=e126] [cursor=pointer]:
+                  - /url: /docs/downloads
+              - listitem [ref=e128]:
+                - link "Evaluating JavaScript" [ref=e129] [cursor=pointer]:
+                  - /url: /docs/evaluating
+              - listitem [ref=e131]:
+                - link "Events" [ref=e132] [cursor=pointer]:
+                  - /url: /docs/events
+              - listitem [ref=e134]:
+                - link "Extensibility" [ref=e135] [cursor=pointer]:
+                  - /url: /docs/extensibility
+              - listitem [ref=e137]:
+                - link "Frames" [ref=e138] [cursor=pointer]:
+                  - /url: /docs/frames
+              - listitem [ref=e140]:
+                - link "Handles" [ref=e141] [cursor=pointer]:
+                  - /url: /docs/handles
+              - listitem [ref=e143]:
+                - link "Isolation" [ref=e144] [cursor=pointer]:
+                  - /url: /docs/browser-contexts
+              - listitem [ref=e146]:
+                - link "Locators" [ref=e147] [cursor=pointer]:
+                  - /url: /docs/locators
+              - listitem [ref=e149]:
+                - link "Mock APIs" [ref=e150] [cursor=pointer]:
+                  - /url: /docs/mock
+              - listitem [ref=e152]:
+                - link "Mock browser APIs" [ref=e153] [cursor=pointer]:
+                  - /url: /docs/mock-browser-apis
+              - listitem [ref=e155]:
+                - link "Navigations" [ref=e156] [cursor=pointer]:
+                  - /url: /docs/navigations
+              - listitem [ref=e158]:
+                - link "Network" [ref=e159] [cursor=pointer]:
+                  - /url: /docs/network
+              - listitem [ref=e161]:
+                - link "Other locators" [ref=e162] [cursor=pointer]:
+                  - /url: /docs/other-locators
+              - listitem [ref=e164]:
+                - link "Pages" [ref=e165] [cursor=pointer]:
+                  - /url: /docs/pages
+              - listitem [ref=e167]:
+                - link "Page object models" [ref=e168] [cursor=pointer]:
+                  - /url: /docs/pom
+              - listitem [ref=e170]:
+                - link "Screenshots" [ref=e171] [cursor=pointer]:
+                  - /url: /docs/screenshots
+              - listitem [ref=e173]:
+                - link "Service Workers" [ref=e174] [cursor=pointer]:
+                  - /url: /docs/service-workers
+              - listitem [ref=e176]:
+                - link "Snapshot testing" [ref=e177] [cursor=pointer]:
+                  - /url: /docs/aria-snapshots
+              - listitem [ref=e179]:
+                - link "Test generator" [ref=e180] [cursor=pointer]:
+                  - /url: /docs/codegen
+              - listitem [ref=e182]:
+                - link "Touch events (legacy)" [ref=e183] [cursor=pointer]:
+                  - /url: /docs/touch-events
+              - listitem [ref=e185]:
+                - link "Trace viewer" [ref=e186] [cursor=pointer]:
+                  - /url: /docs/trace-viewer
+              - listitem [ref=e188]:
+                - link "Videos" [ref=e189] [cursor=pointer]:
+                  - /url: /docs/videos
+              - listitem [ref=e191]:
+                - link "Visual comparisons" [ref=e192] [cursor=pointer]:
+                  - /url: /docs/test-snapshots
+              - listitem [ref=e194]:
+                - link "WebView2" [ref=e195] [cursor=pointer]:
+                  - /url: /docs/webview2
+          - listitem [ref=e197]:
+            - button "Migration" [ref=e199] [cursor=pointer]
+          - listitem [ref=e201]:
+            - button "Integrations" [ref=e203] [cursor=pointer]
+          - listitem [ref=e205]:
+            - link "Supported languages" [ref=e206] [cursor=pointer]:
+              - /url: /docs/languages
+    - main [ref=e208]:
+      - generic [ref=e210]:
+        - generic [ref=e212]:
+          - article [ref=e213]:
+            - navigation "Breadcrumbs" [ref=e214]:
+              - list [ref=e215]:
+                - listitem [ref=e216]:
+                  - link "Home page" [ref=e217] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=e220]:
+                  - generic [ref=e221]: Playwright Test
+                - listitem [ref=e222]:
+                  - generic [ref=e223]: Agents
+            - generic [ref=e224]:
+              - heading "Playwright Test Agents" [level=1] [ref=e226]
+              - heading [level=2] [ref=e227]:
+                - text: Introduction
+                - link "Direct link to Introduction" [ref=e228] [cursor=pointer]:
+                  - /url: "#introduction"
+                  - text: "#"
+              - paragraph [ref=e229]:
+                - text: "Playwright comes with three Playwright Test Agents out of the box:"
+                - strong [ref=e230]: 🎭 planner
+                - text: ","
+                - strong [ref=e231]: 🎭 generator
+                - text: and
+                - strong [ref=e232]: 🎭 healer
+                - text: .
+              - paragraph [ref=e233]: These agents can be used independently, sequentially, or as the chained calls in the agentic loop. Using them sequentially will produce test coverage for your product.
+              - list [ref=e234]:
+                - listitem [ref=e235]:
+                  - strong [ref=e236]: 🎭 planner
+                  - text: explores the app and produces a Markdown test plan
+                - listitem [ref=e237]:
+                  - strong [ref=e238]: 🎭 generator
+                  - text: transforms the Markdown plan into the Playwright Test files
+                - listitem [ref=e239]:
+                  - strong [ref=e240]: 🎭 healer
+                  - text: executes the test suite and automatically repairs failing tests
+              - article [ref=e242] [cursor=pointer]:
+                - button "Watch Playwright 1.56 - Introducing Playwright Test Agents" [ref=e243]
+              - heading [level=3] [ref=e244]:
+                - text: Getting Started
+                - link "Direct link to Getting Started" [ref=e245] [cursor=pointer]:
+                  - /url: "#getting-started"
+                  - text: "#"
+              - paragraph [ref=e246]:
+                - text: Start with adding Playwright Test Agent definitions to your project using the
+                - code [ref=e247]: init-agents
+                - text: command. These definitions should be regenerated whenever Playwright is updated to pick up new tools and instructions.
+              - generic [ref=e248]:
+                - tablist [ref=e249]:
+                  - tab "VS Code" [selected] [ref=e250] [cursor=pointer]
+                  - tab "Claude Code" [ref=e251] [cursor=pointer]
+                  - tab "Codex" [ref=e252] [cursor=pointer]
+                  - tab "OpenCode" [ref=e253] [cursor=pointer]
+                - tabpanel [ref=e255]:
+                  - generic [ref=e257]:
+                    - code [ref=e259]:
+                      - generic [ref=e260]: npx playwright init-agents --loop=vscode
+                    - button "Copy code to clipboard" [ref=e262] [cursor=pointer]
+              - generic [ref=e268]:
+                - generic [ref=e269]: note
+                - paragraph [ref=e274]: VS Code v1.105 (released October 9, 2025) is needed for the agentic experience to function properly in VS Code.
+              - paragraph [ref=e275]: Once the agents have been generated, you can use your AI tool of choice to command these agents to build Playwright Tests.
+              - heading [level=2] [ref=e276]:
+                - text: 🎭 Planner
+                - link "Direct link to 🎭 Planner" [ref=e277] [cursor=pointer]:
+                  - /url: "#-planner"
+                  - text: "#"
+              - paragraph [ref=e278]: Planner agent explores your app and produces a test plan for one or many scenarios and user flows.
+              - paragraph [ref=e279]:
+                - strong [ref=e280]: Input
+              - list [ref=e281]:
+                - listitem [ref=e282]: A clear request to the planner (e.g., “Generate a plan for guest checkout.”)
+                - listitem [ref=e283]:
+                  - text: A
+                  - code [ref=e284]: seed test
+                  - text: that sets up the environment necessary to interact with your app
+                - listitem [ref=e285]:
+                  - emphasis [ref=e286]: (optional)
+                  - text: A Product Requirement Document (PRD) for context
+              - paragraph [ref=e287]:
+                - strong [ref=e288]: Prompt
+              - img "planner prompt" [ref=e289]
+              - blockquote [ref=e290]:
+                - list [ref=e291]:
+                  - listitem [ref=e292]:
+                    - text: Notice how the
+                    - code [ref=e293]: seed.spec.ts
+                    - text: is included in the context of the planner.
+                  - listitem [ref=e294]: Planner will run this test to execute all the initialization necessary for your test including the global setup, project dependencies and all the necessary fixtures and hooks.
+                  - listitem [ref=e295]: Planner will also use this seed test as an example of all the generated tests. Alternatively, you can mention the file name in the prompt.
+              - generic [ref=e296]:
+                - generic [ref=e297]: "Example: seed.spec.ts"
+                - generic [ref=e298]:
+                  - code [ref=e300]:
+                    - generic [ref=e301]: "import { test, expect } from './fixtures';"
+                    - generic [ref=e303]: "test('seed', async ({ page }) => {"
+                    - generic [ref=e304]: // this test uses custom fixtures from ./fixtures
+                    - generic [ref=e305]: "});"
+                  - button "Copy code to clipboard" [ref=e307] [cursor=pointer]
+              - paragraph [ref=e313]:
+                - strong [ref=e314]: Output
+              - list [ref=e315]:
+                - listitem [ref=e316]:
+                  - text: A Markdown test plan saved as
+                  - code [ref=e317]: specs/basic-operations.md
+                  - text: .
+                - listitem [ref=e318]: The plan is human-readable but precise enough for test generation.
+              - group [ref=e319]:
+                - 'generic "Example: specs/basic-operations.md" [ref=e320] [cursor=pointer]'
+              - heading [level=2] [ref=e321]:
+                - text: 🎭 Generator
+                - link "Direct link to 🎭 Generator" [ref=e322] [cursor=pointer]:
+                  - /url: "#-generator"
+                  - text: "#"
+              - paragraph [ref=e323]: Generator agent uses the Markdown plan to produce executable Playwright Tests. It verifies selectors and assertions live as it performs the scenarios. Playwright supports generation hints and provides a catalog of assertions for efficient structural and behavioral validation.
+              - paragraph [ref=e324]:
+                - strong [ref=e325]: Input
+              - list [ref=e326]:
+                - listitem [ref=e327]:
+                  - text: Markdown plan from
+                  - code [ref=e328]: specs/
+              - paragraph [ref=e329]:
+                - strong [ref=e330]: Prompt
+              - img "generator prompt" [ref=e331]
+              - blockquote [ref=e332]:
+                - list [ref=e333]:
+                  - listitem [ref=e334]:
+                    - text: Notice how the
+                    - code [ref=e335]: basic-operations.md
+                    - text: is included in the context of the generator.
+                  - listitem [ref=e336]: This is how generator knows where to get the test plan from. Alternatively, you can mention the file name in the prompt.
+              - paragraph [ref=e337]:
+                - strong [ref=e338]: Output
+              - list [ref=e339]:
+                - listitem [ref=e340]:
+                  - text: A test suite under
+                  - code [ref=e341]: tests/
+                - listitem [ref=e342]: Generated tests may include initial errors that can be healed automatically by the healer agent
+              - group [ref=e343]:
+                - 'generic "Example: tests/add-valid-todo.spec.ts" [ref=e344] [cursor=pointer]'
+              - heading [level=2] [ref=e345]:
+                - text: 🎭 Healer
+                - link "Direct link to 🎭 Healer" [ref=e346] [cursor=pointer]:
+                  - /url: "#-healer"
+                  - text: "#"
+              - paragraph [ref=e347]: "When the test fails, the healer agent:"
+              - list [ref=e348]:
+                - listitem [ref=e349]: Replays the failing steps
+                - listitem [ref=e350]: Inspects the current UI to locate equivalent elements or flows
+                - listitem [ref=e351]: Suggests a patch (e.g., locator update, wait adjustment, data fix)
+                - listitem [ref=e352]: Re-runs the test until it passes or until guardrails stop the loop
+              - paragraph [ref=e353]:
+                - strong [ref=e354]: Input
+              - list [ref=e355]:
+                - listitem [ref=e356]: Failing test name
+              - paragraph [ref=e357]:
+                - strong [ref=e358]: Prompt
+              - img "healer prompt" [ref=e359]
+              - paragraph [ref=e360]:
+                - strong [ref=e361]: Output
+              - list [ref=e362]:
+                - listitem [ref=e363]: A passing test, or a skipped test if the healer believes that functionality is broken.
+              - heading [level=2] [ref=e364]:
+                - text: Artifacts and Conventions
+                - link "Direct link to Artifacts and Conventions" [ref=e365] [cursor=pointer]:
+                  - /url: "#artifacts-and-conventions"
+                  - text: "#"
+              - paragraph [ref=e366]: "The static agent definitions and generated files follow a simple, auditable structure:"
+              - generic [ref=e368]:
+                - code [ref=e370]:
+                  - generic [ref=e371]: repo/
+                  - generic [ref=e372]: ".github/ # agent definitions"
+                  - generic [ref=e373]: "specs/ # human-readable test plans"
+                  - generic [ref=e374]: basic-operations.md
+                  - generic [ref=e375]: "tests/ # generated Playwright tests"
+                  - generic [ref=e376]: "seed.spec.ts # seed test for environment"
+                  - generic [ref=e377]: tests/create/add-valid-todo.spec.ts
+                  - generic [ref=e378]: playwright.config.ts
+                - button "Copy code to clipboard" [ref=e380] [cursor=pointer]
+              - heading [level=3] [ref=e386]:
+                - text: Agent Definitions
+                - link "Direct link to Agent Definitions" [ref=e387] [cursor=pointer]:
+                  - /url: "#agent-definitions"
+                  - text: "#"
+              - paragraph [ref=e388]: Under the hood, agent definitions are collections of instructions and MCP tools. They are provided by Playwright and should be regenerated whenever Playwright is updated.
+              - paragraph [ref=e389]: "Example for Claude Code subagents:"
+              - generic [ref=e391]:
+                - code [ref=e393]:
+                  - generic [ref=e394]: npx playwright init-agents --loop=vscode
+                - button "Copy code to clipboard" [ref=e396] [cursor=pointer]
+              - heading [level=3] [ref=e402]:
+                - text: Specs in
+                - code [ref=e403]: specs/
+                - link "Direct link to specs-in-specs" [ref=e404] [cursor=pointer]:
+                  - /url: "#specs-in-specs"
+                  - text: "#"
+              - paragraph [ref=e405]: Specs are structured plans describing scenarios in human-readable terms. They include steps, expected outcomes, and data. Specs can start from scratch or extend a seed test.
+              - heading [level=3] [ref=e406]:
+                - text: Tests in
+                - code [ref=e407]: tests/
+                - link "Direct link to tests-in-tests" [ref=e408] [cursor=pointer]:
+                  - /url: "#tests-in-tests"
+                  - text: "#"
+              - paragraph [ref=e409]: Generated Playwright tests, aligned one-to-one with specs wherever feasible.
+              - heading [level=3] [ref=e410]:
+                - text: Seed tests
+                - code [ref=e411]: seed.spec.ts
+                - link "Direct link to seed-tests-seedspects" [ref=e412] [cursor=pointer]:
+                  - /url: "#seed-tests-seedspects"
+                  - text: "#"
+              - paragraph [ref=e413]:
+                - text: Seed tests provide a ready-to-use
+                - code [ref=e414]: page
+                - text: context to bootstrap execution.
+          - navigation "Docs pages" [ref=e415]:
+            - link "Previous « Canary releases" [ref=e416] [cursor=pointer]:
+              - /url: /docs/canary-releases
+              - generic [ref=e417]: Previous
+              - generic [ref=e418]: « Canary releases
+            - link "Next Annotations »" [ref=e419] [cursor=pointer]:
+              - /url: /docs/test-annotations
+              - generic [ref=e420]: Next
+              - generic [ref=e421]: Annotations »
+        - list [ref=e424]:
+          - listitem [ref=e425]:
+            - link "Introduction" [ref=e426] [cursor=pointer]:
+              - /url: "#introduction"
+            - list [ref=e427]:
+              - listitem [ref=e428]:
+                - link "Getting Started" [ref=e429] [cursor=pointer]:
+                  - /url: "#getting-started"
+          - listitem [ref=e430]:
+            - link "🎭 Planner" [ref=e431] [cursor=pointer]:
+              - /url: "#-planner"
+          - listitem [ref=e432]:
+            - link "🎭 Generator" [ref=e433] [cursor=pointer]:
+              - /url: "#-generator"
+          - listitem [ref=e434]:
+            - link "🎭 Healer" [ref=e435] [cursor=pointer]:
+              - /url: "#-healer"
+          - listitem [ref=e436]:
+            - link "Artifacts and Conventions" [ref=e437] [cursor=pointer]:
+              - /url: "#artifacts-and-conventions"
+            - list [ref=e438]:
+              - listitem [ref=e439]:
+                - link "Agent Definitions" [ref=e440] [cursor=pointer]:
+                  - /url: "#agent-definitions"
+              - listitem [ref=e441]:
+                - link [ref=e442] [cursor=pointer]:
+                  - /url: "#specs-in-specs"
+                  - text: Specs in
+                  - code [ref=e443]: specs/
+              - listitem [ref=e444]:
+                - link [ref=e445] [cursor=pointer]:
+                  - /url: "#tests-in-tests"
+                  - text: Tests in
+                  - code [ref=e446]: tests/
+              - listitem [ref=e447]:
+                - link [ref=e448] [cursor=pointer]:
+                  - /url: "#seed-tests-seedspects"
+                  - text: Seed tests
+                  - code [ref=e449]: seed.spec.ts
+  - contentinfo [ref=e450]:
+    - generic [ref=e451]:
+      - generic [ref=e452]:
+        - generic [ref=e453]:
+          - generic [ref=e454]: Learn
+          - list [ref=e455]:
+            - listitem [ref=e456]:
+              - link "Getting started" [ref=e457] [cursor=pointer]:
+                - /url: /docs/intro
+            - listitem [ref=e458]:
+              - link [ref=e459] [cursor=pointer]:
+                - /url: https://learn.microsoft.com/en-us/training/modules/build-with-playwright/
+                - text: Playwright Training
+                - img "(opens in new tab)" [ref=e460]
+            - listitem [ref=e462]:
+              - link "Learn Videos" [ref=e463] [cursor=pointer]:
+                - /url: /community/learn-videos
+            - listitem [ref=e464]:
+              - link "Feature Videos" [ref=e465] [cursor=pointer]:
+                - /url: /community/feature-videos
+        - generic [ref=e466]:
+          - generic [ref=e467]: Community
+          - list [ref=e468]:
+            - listitem [ref=e469]:
+              - link [ref=e470] [cursor=pointer]:
+                - /url: https://stackoverflow.com/questions/tagged/playwright
+                - text: Stack Overflow
+                - img "(opens in new tab)" [ref=e471]
+            - listitem [ref=e473]:
+              - link [ref=e474] [cursor=pointer]:
+                - /url: https://aka.ms/playwright/discord
+                - text: Discord
+                - img "(opens in new tab)" [ref=e475]
+            - listitem [ref=e477]:
+              - link [ref=e478] [cursor=pointer]:
+                - /url: https://x.com/playwrightweb
+                - text: X
+                - img "(opens in new tab)" [ref=e479]
+            - listitem [ref=e481]:
+              - link [ref=e482] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/playwrightweb
+                - text: LinkedIn
+                - img "(opens in new tab)" [ref=e483]
+        - generic [ref=e485]:
+          - generic [ref=e486]: More
+          - list [ref=e487]:
+            - listitem [ref=e488]:
+              - link [ref=e489] [cursor=pointer]:
+                - /url: https://github.com/microsoft/playwright
+                - text: GitHub
+                - img "(opens in new tab)" [ref=e490]
+            - listitem [ref=e492]:
+              - link [ref=e493] [cursor=pointer]:
+                - /url: https://www.youtube.com/channel/UC46Zj8pDH5tDosqm1gd7WTg
+                - text: YouTube
+                - img "(opens in new tab)" [ref=e494]
+            - listitem [ref=e496]:
+              - link [ref=e497] [cursor=pointer]:
+                - /url: https://dev.to/playwright
+                - text: Blog
+                - img "(opens in new tab)" [ref=e498]
+            - listitem [ref=e500]:
+              - link "Ambassadors" [ref=e501] [cursor=pointer]:
+                - /url: /community/ambassadors
+            - listitem [ref=e502]:
+              - link [ref=e503] [cursor=pointer]:
+                - /url: https://go.microsoft.com/fwlink/?LinkId=521839
+                - text: Microsoft Privacy Statement
+                - img "(opens in new tab)" [ref=e504]
+      - generic [ref=e506]: Copyright © 2026 Microsoft
+```
+
+# Test source
+
+```ts
+  1  | import { Page, expect } from '@playwright/test';
+  2  | import { PackageTabs } from '../components/TabCodeBlock_data';
+  3  | 
+  4  | export class TabCodeBlock {
+  5  |   constructor(readonly page: Page) {
+  6  |     this.page = page;
+  7  |   }
+  8  | 
+  9  |   async checkTab(tabCases: PackageTabs[], tabCodeBlock: string) {
+  10 |     const block = this.page.getByText(tabCodeBlock, { exact: false });
+  11 | 
+  12 |     for (const { targetCmd, assertCmd } of tabCases) {
+> 13 |       await block.getByRole('tab', { name: targetCmd, exact: true }).click();
+     |                                                                      ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  14 |       await expect(block.getByRole('code')).toContainText(assertCmd);
+  15 |     }
+  16 |   }
+  17 | 
+  18 |   async checkCopyButton(tabCases: PackageTabs[], tabCodeBlock: string) {
+  19 |     const block = this.page.getByText(tabCodeBlock, { exact: false });
+  20 | 
+  21 |     for (const { targetCmd } of tabCases) {
+  22 |       await block.getByRole('tab', { name: targetCmd, exact: true }).click();
+  23 |       await block.getByRole('button', { name: 'Copy code to clipboard' }).click();
+  24 | 
+  25 |       // "Copied" の表示でコピー成功を検証
+  26 |       await expect(block.getByRole('button', { name: 'Copied' })).toBeVisible();
+  27 |     }
+  28 |   }
+  29 | }
+```
